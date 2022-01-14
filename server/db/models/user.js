@@ -1,4 +1,3 @@
-'use strict';
 const {
   Model
 } = require('sequelize');
@@ -23,14 +22,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     phone: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.BIGINT
     },
     password: {
       allowNull: true,
       type: DataTypes.STRING
     },
     name: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.STRING
     },
     role: {

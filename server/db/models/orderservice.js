@@ -1,4 +1,3 @@
-'use strict';
 const {
   Model
 } = require('sequelize');
@@ -29,10 +28,6 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Services',
         key: 'id',
       },
-    },
-    price: {
-      allowNull: false,
-      type: DataTypes.INTEGER
     },
     createdAt: {
       allowNull: false,

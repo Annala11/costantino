@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('OrderServices', {
@@ -17,10 +16,6 @@ module.exports = {
           model: 'Services',
           key: 'id',
         },
-      },
-      price: {
-        allowNull: false,
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
