@@ -7,6 +7,7 @@ import store from '../../redux/store';
 
 import Navigation from '../HomeViews/Navigation/Navigation';
 import Home from '../HomeViews/Home/Home';
+
 import Registration from '../ProfileView/Registration/Registration';
 import Login from '../ProfileView/Login/Login';
 import NewOrderСhoice from '../../components/NewOrdersViews/NewOrderСhoice/NewOrderСhoice';
