@@ -22,7 +22,7 @@ const registerUser = async (req, res) => {
       phone,
       password,
       name,
-      role: "client"
+      role: "user"
     });
 
     req.session.user = {
@@ -35,11 +35,11 @@ const registerUser = async (req, res) => {
     res.json({
       user: req.session.user
     });
-  } catch (err) {
-    console.log(err.message);
+  } catch (error) {
+    console.log(error.message);
     res.status(401).end();
   }
 
 };
 
-module.exports = registerUser;
+module.exports = { registerUser };
