@@ -34,7 +34,7 @@ function Login() {
       phone: data.get('phone'),
       password: data.get('password'),
     };
-    fetch('http://localhost:5001/login', {
+    fetch('/login', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -44,9 +44,11 @@ function Login() {
     })
       .then(res => res.json())
       .then(data => {
-        if (data.user) {
-          alert('This email adress already used!')
+        if (!data.user) {
+          console.log(data.message);
+          // alert('This email adress already used!')
         } else {
+          console.log(data);
           dispatch(userLoginAC(data));
           history.push('/');
         }
