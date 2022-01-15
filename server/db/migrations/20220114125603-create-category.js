@@ -12,11 +12,11 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       parent_id: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
       createdAt: {
