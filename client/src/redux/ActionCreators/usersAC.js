@@ -6,3 +6,10 @@ export const userRegistrationAC = (payload) => {
     payload
   }
 }
+
+export const userLoginAC = (payload) => {
+  return {
+    type: usersAT.INIT_USER,
+    payload
+  }
+}
