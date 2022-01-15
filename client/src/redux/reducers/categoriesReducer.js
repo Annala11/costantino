@@ -1,4 +1,4 @@
-import { categoriesAT } from "../ActionTypes/categoriesAT";
+// import { categoriesAT } from "../ActionTypes/categoriesAT";
 
 const initialState = {
   categories: [],

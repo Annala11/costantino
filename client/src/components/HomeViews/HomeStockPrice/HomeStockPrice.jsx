@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomeStockPrice(props) {
+function HomeStockPrice() {
   return (
     <div>
       StockPrice

@@ -25,11 +25,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     description: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.STRING
     },
     parent_id: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER
     },
     createdAt: {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewOrderTime(props) {
+function NewOrderTime() {
   return (
     <div>
       NewRecordTime

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewOrderConfirm(props) {
+function NewOrderConfirm() {
   return (
     <div>
       RecordConfirm
