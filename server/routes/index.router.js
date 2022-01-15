@@ -15,7 +15,7 @@ const stockpriceRouter = require('./stockprice.router');
 
 router.use('/login', loginRouter);
 router.use('/logout', logoutRouter);
-router.use('/logregistrationout', registrationRouter);
+router.use('/registration', registrationRouter);
 router.use('/session', sessionRouter);
 router.use('/reviews', reviewsRouter);
 router.use('/categories', categoriesRouter);
