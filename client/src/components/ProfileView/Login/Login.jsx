@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { userLoginAC } from '../../../redux/ActionCreators/usersAC';
@@ -22,7 +22,7 @@ import { userLoginAC } from '../../../redux/ActionCreators/usersAC';
 
 function Login() {
 
-  const theme = createTheme();
+  // const theme = createTheme();
 
   const dispatch = useDispatch();
   let history = useHistory();
@@ -53,7 +53,7 @@ function Login() {
       })
   };
   return (
-    <ThemeProvider theme={theme}>
+    // <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -137,7 +137,7 @@ function Login() {
           </Box>
         </Grid>
       </Grid>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }
 
