@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewOrderСhoiceRepeated(props) {
+function NewOrderСhoiceRepeated() {
   return (
     <div>
       NewOrderСhoiceRepeated

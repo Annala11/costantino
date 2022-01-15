@@ -1,4 +1,4 @@
-import { reviewsAT } from "../ActionTypes/reviewsAT";
+// import { reviewsAT } from "../ActionTypes/reviewsAT";
 
 const initialState = {
   reviews: {},

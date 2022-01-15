@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PagesStockPrice(props) {
+function PagesStockPrice() {
   return (
     <div>
       

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomeReviews(props) {
+function HomeReviews() {
   return (
     <div>
       Reviews

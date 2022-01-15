@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomeServicesAndPrices(props) {
+function HomeServicesAndPrices() {
   return (
     <div>
       ServicesAndPrices

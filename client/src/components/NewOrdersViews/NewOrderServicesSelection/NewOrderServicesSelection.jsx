@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewOrderServicesSelection(props) {
+function NewOrderServicesSelection() {
   return (
     <div>
       NewRecordServicesSelection

@@ -1,4 +1,4 @@
-import { specialistsAT } from "../ActionTypes/specialistsAT";
+// import { specialistsAT } from "../ActionTypes/specialistsAT";
 
 const initialState = {
   specialists: {},
