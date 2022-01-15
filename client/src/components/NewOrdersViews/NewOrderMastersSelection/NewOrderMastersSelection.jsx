@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewOrderMastersSelection(props) {
+function NewOrderMastersSelection() {
   return (
     <div>
       MastersSelection

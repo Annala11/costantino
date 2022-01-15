@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewOrderSuccessful(props) {
+function NewOrderSuccessful() {
   return (
     <div>
       

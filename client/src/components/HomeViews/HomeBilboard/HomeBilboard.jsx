@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomeBilboard(props) {
+function HomeBilboard() {
   return (
     <div>
       HomeBilboard

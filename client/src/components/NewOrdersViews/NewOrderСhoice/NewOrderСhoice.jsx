@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewOrderСhoice(props) {
+function NewOrderСhoice() {
   return (
     <div>
       
