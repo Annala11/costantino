@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { userRegistrationAC } from '../../../redux/ActionCreators/usersAC';
 
@@ -21,7 +21,7 @@ import { userRegistrationAC } from '../../../redux/ActionCreators/usersAC';
 function Registration() {
 
   const dispatch = useDispatch();
-  let history = useHistory();
+  // let history = useHistory();
 
   const theme = createTheme();
 
@@ -33,7 +33,8 @@ function Registration() {
       password: data.get('password'),
       name: data.get('name')
     };
-    fetch('http://localhost:5001/regisration', {
+    // console.log(1111);
+    fetch('http://localhost:5001/registration', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -43,11 +44,12 @@ function Registration() {
     })
       .then(res => res.json())
       .then(data => {
-        if (data.user) {
-          alert('This email adress already used!')
+        if (!data.user) {
+          // console.log(data); //TODO - show message to user
         } else {
+          console.log(data);
           dispatch(userRegistrationAC(data));
-          history.push('/login');
+          history.goBack();
         }
       })
   };
