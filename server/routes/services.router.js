@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { allServices } = require('../controllers/services.controller');
+const { allServices } = require('../controllers/service.controller');
 
 router.route('/')
   //get list of all services

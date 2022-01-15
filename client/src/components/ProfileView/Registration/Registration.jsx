@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import { useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { userRegistrationAC } from '../../../redux/ActionCreators/usersAC';
 
@@ -21,7 +21,7 @@ import { userRegistrationAC } from '../../../redux/ActionCreators/usersAC';
 function Registration() {
 
   const dispatch = useDispatch();
-  // let history = useHistory();
+  let history = useHistory();
 
   const theme = createTheme();
 
@@ -34,7 +34,7 @@ function Registration() {
       name: data.get('name')
     };
     // console.log(1111);
-    fetch('http://localhost:5001/registration', {
+    fetch('/registration', {
       method: 'POST',
       credentials: 'include',
       headers: {
