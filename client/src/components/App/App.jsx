@@ -16,9 +16,6 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
         </Switch>
-        <div className="App">
-          <h1>It`s App component</h1>
-        </div>
       </BrowserRouter>
     </Provider>
 
