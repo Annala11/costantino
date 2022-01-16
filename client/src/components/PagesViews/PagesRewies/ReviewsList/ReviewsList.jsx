@@ -13,7 +13,10 @@ function ReviewsList() {
   // useEffect(() => {
   //   dispatch(initReviewsAC())
   // }, [dispatch])
-  // console.log(reviews.length);
+  // if (reviews.length > 0) {
+  //   console.log(reviews[0].id);
+  // }
+
   // console.log(reviews.reviews.length);
   useEffect(() => {
     fetch('/reviews')
@@ -21,11 +24,10 @@ function ReviewsList() {
       .then(reviews => dispatch(initReviewsAC(reviews)))
   }, [dispatch])
 
-  // console.log(reviews.length);
+  // TODO - get users from users table for reviews, and branch
   return (
     <>
-      {/* <ReviewBlock /> */}
-      {reviews.length > 0 ? reviews.map((review) => <ReviewBlock key={review.id} review={review} />) : <div>Нет Отзывов!</div>}
+      {reviews.length ? reviews.map((review) => <ReviewBlock key={review.id} review={review} />) : <div>Нет Отзывов!</div>}
     </>
   );
 }

@@ -1,12 +1,13 @@
 import React from 'react';
+import './reviewblock.css';
 
 function ReviewBlock({ review }) {
 
   return (
     <>
-      <div>
-        <div>Name</div>
-        <div>{review}</div>
+      <div className="container">
+        <div className="elem">title: {review.title}</div>
+        <div className="elem">{review.text}</div>
       </div>
 
     </>
