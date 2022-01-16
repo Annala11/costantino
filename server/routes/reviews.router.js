@@ -7,6 +7,3 @@ router.route('/')
   .get(allReviews);
 
 module.exports = router;
-
-
-// const { allServices } = require('../controllers/service.controller');

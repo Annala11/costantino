@@ -6,7 +6,7 @@ function ReviewBlock({ review }) {
     <>
       <div>
         <div>Name</div>
-        <div>{review.title}</div>
+        <div>{review}</div>
       </div>
 
     </>
