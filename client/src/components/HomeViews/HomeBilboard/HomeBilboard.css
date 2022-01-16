@@ -1,0 +1,19 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+};
+
+.item-1 {
+  background-color: aquamarine
+};
+
+.item-2 {
+  background-color:  darkslategrey
+};
+
+.item-3 {
+  background-color:  khaki
+};
+

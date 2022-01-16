@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './App.css';
+
 import { Provider } from 'react-redux';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 
@@ -21,6 +23,7 @@ function App() {
         <Navigation />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/home" exact component={Home} />
           <Route path="/registration" component={Registration} />
           <Route path="/login" component={Login} />
           <Route path="/logout" exact component={Home} />
@@ -30,7 +33,6 @@ function App() {
         </Switch>
       </BrowserRouter>
     </Provider>
-
   );
 }
 
