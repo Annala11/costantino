@@ -1,0 +1,27 @@
+.slider, .slider-list, .slider-slide{
+  height: 450px !important;
+}
+.slider-slide{
+  
+}
+
+.slider-slide > div{
+  height: 100%;
+  position: relative;
+}
+
+.slider-slide > div > img{
+  height: 100%;
+  width: 100%;
+}
+
+.slider-slide .sliderText{
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  font-size: 2em;
+  background-color: grey;
+  text-align: center;
+  min-width: 400px;
+  min-height: 100px;
+}
