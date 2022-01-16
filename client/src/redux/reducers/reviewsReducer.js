@@ -1,4 +1,4 @@
-// import { reviewsAT } from "../ActionTypes/reviewsAT";
+import { reviewsAT } from "../ActionTypes/reviewsAT";
 
 const initialState = {
   reviews: {},
@@ -7,10 +7,13 @@ const initialState = {
 export const reviewsReducer = (state = initialState, action) => {
 
   switch (action.type) {
+    case reviewsAT.INIT_REVIEWS:
+      return { ...state, reviews: action.payload }
 
-    
 
     default:
       return state;
   }
 };
+
+

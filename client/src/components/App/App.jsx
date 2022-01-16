@@ -14,6 +14,7 @@ import MyProfile from '../ProfileView/MyProfile/MyProfile';
 import NewOrderСhoice from '../../components/NewOrdersViews/NewOrderСhoice/NewOrderСhoice';
 import PagesStockPrice from '../PagesViews/PagesStockPrice/PagesStockPrice'
 import ServicesAndPricesList from '../PagesViews/PagesServicesAndPrices/ServicesAndPricesList';
+import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Route path="/neworder" exact component={NewOrderСhoice} />
           <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
           <Route path="/stockprice" exact component={PagesStockPrice} />
+
+          <Route path="/reviews" exact component={ReviewPage} />
         </Switch>
       </BrowserRouter>
     </Provider>
