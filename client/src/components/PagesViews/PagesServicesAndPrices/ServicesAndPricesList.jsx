@@ -14,7 +14,7 @@ function ServicesAndPricesList() {
   console.log(categoriesParent, 'parent');
   
   useEffect(() => {
-    fetch('http://localhost:5001/categories')
+    fetch('/categories')
     .then(response => response.json())
     .then(data => dispatch(initCategoriesAC(data.categories)))
   }, [])
