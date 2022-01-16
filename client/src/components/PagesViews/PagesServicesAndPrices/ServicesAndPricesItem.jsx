@@ -1,37 +1,17 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import { Container } from '@material-ui/core';
+import { Typography } from '@mui/material';
+import React from 'react';
 
-function ServicesAndPricesItem({ categoryParent }) {
 
-  // console.log(category, 'category');
+function ServicesAndPricesItem({women, categoryParentId1}) {
+
+  console.log(women.category_id, 'women.category_id');
+  console.log(categoryParentId1, 'categoryParentId1');
   return (
-    <Container maxWidth="sm">
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            { categoryParent.name }
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {
-             
-            }
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      {/* <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions> */}
-    </Card>
-  </Container>
+    <>
+      <Typography>
+        {women.category_id === categoryParentId1.id && women.name}
+      </Typography>
+    </>
   );
 }
 
