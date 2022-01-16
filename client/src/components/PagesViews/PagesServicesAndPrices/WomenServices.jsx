@@ -10,22 +10,25 @@ function WomenServices({ categoryParentId1, servicesWomen }) {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
- 
+
   return (
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>{categoryParentId1?.name}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-           { servicesWomen && servicesWomen.map(women => <WomenServicesCard women={women} categoryParentId1={categoryParentId1} key={women.id} />) }
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1bh-content"
+        id="panel1bh-header"
+      >
+        <Typography sx={{ width: '33%', flexShrink: 0 }}>{categoryParentId1?.name}</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Typography>
+          {
+            servicesWomen && servicesWomen.map(women =>
+              <WomenServicesCard women={women} categoryParentId1={categoryParentId1} key={women.id} />
+            )}
+        </Typography>
+      </AccordionDetails>
+    </Accordion>
   );
 }
 

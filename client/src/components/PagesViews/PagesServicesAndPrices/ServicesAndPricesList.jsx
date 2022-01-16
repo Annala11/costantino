@@ -5,6 +5,7 @@ import { Card, CardActionArea, CardContent, Container, Typography } from '@mui/m
 import { initServicesAC } from '../../../redux/ActionCreators/servicesAC';
 import WomenServices from './WomenServices';
 import MenServices from './MenServices';
+import KidServices from './KidServices';
 // import ServicesAndPricesItem from './ServicesAndPricesItem';
 
 
@@ -16,6 +17,7 @@ function ServicesAndPricesList() {
 
   const servicesWomen = services.filter(service => service.id <= 24);
   const servicesMen = services.filter(service => service.id > 24 && service.id <= 34);
+  const servicesKid = services.filter(service => service.id > 24 && service.id >= 34);
 
   //родительские категории
   const categoriesParent = categories.filter(category => category.id <= 3);
@@ -73,7 +75,7 @@ function ServicesAndPricesList() {
             </Typography>
             {
               categoriesParentId3 && categoriesParentId3.map(categoryParentId3 =>
-                <WomenServices key={categoryParentId3.id} categoryParentId3={categoryParentId3} />)
+                <KidServices key={categoryParentId3.id} servicesKid={servicesKid} categoryParentId3={categoryParentId3} />)
             }
           </CardContent>
         </CardActionArea>

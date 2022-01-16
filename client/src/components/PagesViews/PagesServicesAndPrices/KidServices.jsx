@@ -1,9 +1,9 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
-import React from 'react';
-import MenServicesCard from './MenServicesCard';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import React from 'react';
+import KidServicesCard from './KidServicesCard';
 
-function MenServices({ servicesMen, categoryParentId2 }) {
+function KidServices({ categoryParentId3, servicesKid }) {
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -18,13 +18,13 @@ function MenServices({ servicesMen, categoryParentId2 }) {
         aria-controls="panel1bh-content"
         id="panel1bh-header"
       >
-        <Typography sx={{ width: '33%', flexShrink: 0 }}>{categoryParentId2?.name}</Typography>
+        <Typography sx={{ width: '33%', flexShrink: 0 }}>{categoryParentId3?.name}</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
           {
-            servicesMen && servicesMen.map(men =>
-              <MenServicesCard men={men} categoryParentId2={categoryParentId2} key={men.id} />
+            servicesKid && servicesKid.map(kid =>
+              <KidServicesCard kid={kid} categoryParentId3={categoryParentId3} key={kid.id} />
             )}
         </Typography>
       </AccordionDetails>
@@ -32,4 +32,4 @@ function MenServices({ servicesMen, categoryParentId2 }) {
   );
 }
 
-export default MenServices;
+export default KidServices;
