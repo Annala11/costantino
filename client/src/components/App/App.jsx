@@ -10,6 +10,7 @@ import Home from '../HomeViews/Home/Home';
 
 import Registration from '../ProfileView/Registration/Registration';
 import Login from '../ProfileView/Login/Login';
+import MyProfile from '../ProfileView/MyProfile/MyProfile';
 import NewOrderСhoice from '../../components/NewOrdersViews/NewOrderСhoice/NewOrderСhoice';
 import PagesStockPrice from '../PagesViews/PagesStockPrice/PagesStockPrice'
 import ServicesAndPricesList from '../PagesViews/PagesServicesAndPrices/ServicesAndPricesList';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/registration" component={Registration} />
           <Route path="/login" component={Login} />
+          <Route path="/profile" component={MyProfile} />
           <Route path="/logout" exact component={Home} />
           <Route path="/neworder" exact component={NewOrderСhoice} />
           <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
