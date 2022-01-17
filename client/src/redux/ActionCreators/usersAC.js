@@ -7,7 +7,7 @@ export const userRegistrationAC = (payload) => {
   }
 }
 
-export const userLoginAC = (payload) => {
+export const userInitAC = (payload) => {
   return {
     type: usersAT.INIT_USER,
     payload

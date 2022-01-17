@@ -15,26 +15,31 @@ import NewOrderСhoice from '../../components/NewOrdersViews/NewOrderСhoice/New
 import PagesStockPrice from '../PagesViews/PagesStockPrice/PagesStockPrice'
 import ServicesAndPricesList from '../PagesViews/PagesServicesAndPrices/ServicesAndPricesList';
 import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
+import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
+import './App.css';
 
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Navigation />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/home" exact component={Home} />
-          <Route path="/registration" component={Registration} />
-          <Route path="/login" component={Login} />
-          <Route path="/profile" component={MyProfile} />
-          <Route path="/logout" exact component={Home} />
-          <Route path="/neworder" exact component={NewOrderСhoice} />
-          <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
-          <Route path="/stockprice" exact component={PagesStockPrice} />
-
-          <Route path="/reviews" exact component={ReviewPage} />
-        </Switch>
-      </BrowserRouter>
+      <LoginAndInitWrapper>
+        <BrowserRouter>
+          <Navigation />
+          <div className="mainContainer">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/home" exact component={Home} />
+            <Route path="/registration" component={Registration} />
+            <Route path="/login" component={Login} />
+            <Route path="/profile" component={MyProfile} />
+            <Route path="/logout" exact component={Home} />
+            <Route path="/neworder" exact component={NewOrderСhoice} />
+            <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
+            <Route path="/stockprice" exact component={PagesStockPrice} />
+            <Route path="/reviews" exact component={ReviewPage} />
+          </Switch>
+          </div>
+        </BrowserRouter>
+      </LoginAndInitWrapper>
     </Provider>
 
   );

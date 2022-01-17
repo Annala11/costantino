@@ -1,7 +1,7 @@
 import { usersAT } from "../ActionTypes/usersAT";
 
 const initialState = {
-  users: {},
+  user: {},
   error: null
 };
 

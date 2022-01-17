@@ -1,11 +1,9 @@
 const isAuth = async (req, res) => {
   try {
     const isUserAuth = !!req.session.user;
-
     if (isUserAuth) {
       res.json({
-        user: req.session.user, //TODO - load user orders
-
+        user: req.session.user,
       });
     } else {
       res.json({
