@@ -6,29 +6,29 @@ import './MyCarousel.css';
 
 export default function MyCarousel() {
   return (
-    <Carousel>
+    <Carousel className='slider'>
       <div>
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1" />
+        <img  src="categoryFoto/mensFoto.jpg" />
         <span className="sliderText">Text on slide 1</span>
       </div>
       <div>
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2" />
+        <img src="categoryFoto/womensFoto.jpg" />
         <span className="sliderText">Text on slide 2</span>
       </div>
       <div>
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide3" />
+        <img src="categoryFoto/childFoto.jpg" />
         <span className="sliderText">Text on slide 3</span>
       </div>
       <div>
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide4" />
+        <img src="categoryFoto/someWoman.jpg" />
         <span className="sliderText">Text on slide 4</span>
       </div>
       <div>
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5" />
+        <img src="categoryFoto/someBarber.jpg" />
         <span className="sliderText">Text on slide 5</span>
       </div>
       <div>
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6" />
+        <img src="categoryFoto/someChild.png" />
         <span className="sliderText">Text on slide 6</span>
       </div>
     </Carousel>
