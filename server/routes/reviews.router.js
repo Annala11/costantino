@@ -1,9 +1,13 @@
 const router = require('express').Router();
-const { allReviews } = require('../controllers/reviews.controller');
+const { allReviews, addReview } = require('../controllers/reviews.controller');
 
 
 router.route('/')
-  //get list of all reviews
+  // Получени всех отзывов
   .get(allReviews);
+
+router.route('/addreview')
+  // Добавление отзыва
+  .post(addReview);
 
 module.exports = router;
