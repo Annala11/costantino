@@ -1,10 +1,10 @@
 const router = require('express').Router(); //TODO
 
-const { getOrders } = require('../controllers/orderview.controller');
-
+const { getOrdersAndSpecialists } = require('../controllers/orderview.controller');
 
 router.route('/')
   //вывод всех ордеров в архив
-  .get(getOrders);
+  .get(getOrdersAndSpecialists)
+  
 
 module.exports = router;

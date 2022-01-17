@@ -28,7 +28,32 @@ module.exports = {
         date: new Date(),
         createdAt: new Date(),
         updatedAt: new Date(),
+      }, {
+        user_id: 2,
+        specialist_id: 2,
+        status: 'finished',
+        startinterval: 12,
+        date: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }, {
+        user_id: 2,
+        specialist_id: 2,
+        status: 'finished',
+        startinterval: 12,
+        date: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },{
+        user_id: 2,
+        specialist_id: 2,
+        status: 'finished',
+        startinterval: 12,
+        date: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
+
     ], {});
 
   },

@@ -13,7 +13,6 @@ const scheduleRouter = require('./schedule.router');
 const isAuthRouter = require('./isAuth.router');
 const stockpriceRouter = require('./stockprice.router');
 
-
 router.use('/login', loginRouter);
 router.use('/logout', logoutRouter);
 router.use('/registration', registrationRouter);
@@ -27,5 +26,6 @@ router.use('/admin', adminRouter);
 router.use('/schedule', scheduleRouter);
 router.use('/isAuth', isAuthRouter);
 router.use('/stockprice', stockpriceRouter);
+
 
 module.exports = router;
