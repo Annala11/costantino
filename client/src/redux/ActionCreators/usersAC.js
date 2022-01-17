@@ -12,6 +12,7 @@ export const userInitAC = (payload) => {
     type: usersAT.INIT_USER,
     payload
   }
+
 }
 
 export const userLogoutAC = () => {

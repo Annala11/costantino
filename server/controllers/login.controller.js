@@ -36,7 +36,8 @@ const login = async (req, res) => {
       id: userByPhone.id,
       name: userByPhone.name,
       phone: userByPhone.phone,
-      role: userByPhone.role
+      role: userByPhone.role,
+      isAuth:true,
     }
 
     res.json({
