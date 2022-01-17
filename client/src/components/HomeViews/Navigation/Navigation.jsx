@@ -67,8 +67,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 function Navigation() {
 
-  const userIsAuth = useSelector(state => state.users.user.isAuth);
-
+  const user = useSelector(state => state.users.user);
+  const userIsAuth = !!user;
+  
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
