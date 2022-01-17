@@ -28,7 +28,8 @@ function HomeServicesAndPricesCard({categoryParent}) {
       <CardActions>
         <Button size="small">
         <Link to ='/neworder' > ЗАПИСАТЬСЯ </Link>
-        <Button size="small"></Button>
+        </Button>
+        <Button size="small">
         <Link to ='/servicesandprices' > ПОДРОБНЕЕ </Link>
         </Button>
       </CardActions>

@@ -12,7 +12,6 @@ const registerUser = async (req, res) => {
         // raw: true,
       },
     });
-    console.log(userWithSamePhone);
     if (userWithSamePhone) {
       // console.log('same phone');
       res.status(401).json({
