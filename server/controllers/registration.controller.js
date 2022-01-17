@@ -33,7 +33,8 @@ const registerUser = async (req, res) => {
         id: user.id,
         phone: user.phone,
         name: user.name,
-        role: user.role
+        role: user.role,
+        isAuth:true,
       }
 
       res.json({

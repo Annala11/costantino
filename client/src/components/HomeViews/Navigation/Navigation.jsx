@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { Toolbar, IconButton, Typography, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import CallIcon from '@mui/icons-material/Call';
 import { styled, useTheme } from '@mui/material/styles';
-
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -61,12 +61,13 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 }));
 
 function Navigation() {
+
+  const userIsAuth = useSelector(state => state.users.user.isAuth);
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -80,27 +81,26 @@ function Navigation() {
   };
 
   return (
-
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}
+      <AppBar className='navBlockMenu' position="fixed" open={open}
         style={{
-          background: `linear-gradient(45deg, #13547a, #80d0c7)`,
+          background: 'black',
           color: '#FFE4B5',
           textShadow: `1px 1px 2px pink`
-        }} >
-        <Toolbar >
+        }}>
+        <Toolbar className='navBlockMenu' >
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="end"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1, marginLeft: '20px', fontSize: '25px' }}>
-            <Link to='/home' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#C0C0C0' }} > Costantino </Link>
+            <Link to='/home' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link>
+            <img style={{width:'30px', height:'30px', filter: 'invert(1)'}} src="logo.png"/>
           </Typography>
           <CallIcon></CallIcon>
           <Button color="inherit" size='small' style={{ fontSize: '15px' }}>
@@ -119,39 +119,47 @@ function Navigation() {
         }}
         variant="persistent"
         anchor="left"
-        open={open}
-      >
-        <DrawerHeader style={{
-          background: `linear-gradient(45deg, #13547a, #80d0c7)`,
-          color: '#FFE4B5',
-          textShadow: `1px 1px 2px pink`,
-        }}>
+        open={open}>
+        <DrawerHeader className='navBlockMenu'>
           <Typography variant="h6" noWrap component="div" >
-            <Link to='/home' style={{ flexGrow: 1, textDecoration: 'none', color: '#C0C0C0' }} > Costantino </Link>
+            <Link to='/home' style={{ flexGrow: 1, textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link>
           </Typography>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton style={{color:'#FFE4B5'}}onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List className='navBlockMenu'>
-          {[
-            { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
-            { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
-            { text: 'АКЦИИ', link: '/stockprice' },
-            { text: 'КОНТАКТЫ', link: '/contacts' }
-            // Добавить контакты и условное форматирование в зависимости от сессии! ! ! ! ! ! !
-          ].map((el) => (
-            <ListItem button key={el.text}>
-              <Link to={el.link}> {el.text} </Link>
-            </ListItem>
-          ))}
-        </List>
+        {userIsAuth ? // Условныей рендеринг, исходя из авторозации пользователя 
+          <List className='navBlockMenu'>
+            {[
+              { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
+              { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
+              { text: 'АКЦИИ', link: '/stockprice' },
+              { text: 'КОНТАКТЫ', link: '/contacts' },
+              { text: 'ВЫЙТИ', link: '/logout' }
+            ].map((el) => (
+              <ListItem button key={el.text}>
+                <Link to={el.link}> {el.text} </Link>
+              </ListItem>
+            ))}
+          </List> :
+          <List className='navBlockMenu'>
+            {[
+              { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
+              { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
+              { text: 'АКЦИИ', link: '/stockprice' },
+              { text: 'КОНТАКТЫ', link: '/contacts' },
+              { text: 'ВОЙТИ', link: '/login' }
+            ].map((el) => (
+              <ListItem button key={el.text}>
+                <Link to={el.link}> {el.text} </Link>
+              </ListItem>
+            ))}
+          </List>}
       </Drawer>
       <Main open={open}>
       </Main>
     </Box>
-
   );
 }
 
