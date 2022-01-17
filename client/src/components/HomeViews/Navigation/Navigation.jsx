@@ -16,12 +16,10 @@ import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 
-const drawerWidth = 240;
+import './Navigation.css'
+
+const drawerWidth = 260;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -91,7 +89,7 @@ function Navigation() {
           color: '#FFE4B5',
           textShadow: `1px 1px 2px pink`
         }} >
-        <Toolbar>
+        <Toolbar >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -101,11 +99,11 @@ function Navigation() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1 }}>
-            Costantino
+          <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1, marginLeft: '20px', fontSize: '25px' }}>
+            <Link to='/home' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#C0C0C0' }} > Costantino </Link>
           </Typography>
           <CallIcon></CallIcon>
-          <Button color="inherit" size='small'>
+          <Button color="inherit" size='small' style={{ fontSize: '15px' }}>
             8-812-777-777-77
           </Button>
         </Toolbar>
@@ -126,38 +124,31 @@ function Navigation() {
         <DrawerHeader style={{
           background: `linear-gradient(45deg, #13547a, #80d0c7)`,
           color: '#FFE4B5',
-          textShadow: `1px 1px 2px pink`
+          textShadow: `1px 1px 2px pink`,
         }}>
-          <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1 }}>
-            Costantino
+          <Typography variant="h6" noWrap component="div" >
+            <Link to='/home' style={{ flexGrow: 1, textDecoration: 'none', color: '#C0C0C0' }} > Costantino </Link>
           </Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List style={{
-          background: `linear-gradient(45deg, #13547a, #80d0c7)`,
-          color: '#FFE4B5',
-          textShadow: `1px 1px 2px pink`
-        }}>
+        <List className='navBlockMenu'>
           {[
-            {text:'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder'},
-            {text:'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices'},
-            {text:'АКЦИИ', link:'/stockprice'},
-            // Добавить контакты и условное форматирование в зависимости от сессии! ! ! ! ! !  !
-          ].map((el, index) => (
+            { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
+            { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
+            { text: 'АКЦИИ', link: '/stockprice' },
+            { text: 'КОНТАКТЫ', link: '/contacts' }
+            // Добавить контакты и условное форматирование в зависимости от сессии! ! ! ! ! ! !
+          ].map((el) => (
             <ListItem button key={el.text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <Link to ={el.link} > {el.text} </Link>
+              <Link to={el.link}> {el.text} </Link>
             </ListItem>
           ))}
         </List>
       </Drawer>
       <Main open={open}>
-        <DrawerHeader />
       </Main>
     </Box>
 
