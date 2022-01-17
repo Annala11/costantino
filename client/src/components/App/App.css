@@ -1,0 +1,23 @@
+.mainContainer{
+  width: 1400px;
+  margin: 0 auto;
+}
+
+#root{
+background: #010B13;
+color: #000000;
+background: linear-gradient(to bottom, #010B13 0%, #000004 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #010B13), color-stop(100%, #000004));
+background: -webkit-linear-gradient(top, #010B13 0%, #000004 100%);
+background: -moz-linear-gradient(top, #010B13 0%, #000004 100%);
+background: -o-linear-gradient(top, #010B13 0%, #000004 100%);
+background: -ms-linear-gradient(top, #010B13 0%, #000004 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#010B13', endColorstr='#000004', GradientType=0);
+border: 1px solid #000000;
+text-shadow: 0 1px 0 #101A22;
+-webkit-text-shadow: 0 1px 0 #101A22;
+-moz-text-shadow: 0 1px 0 #101A22;
+box-shadow: inset 0 1px 0 #101A22;
+-webkit-box-shadow: inset 0 1px 0 #101A22;
+-moz-box-shadow: inset 0 1px 0 #101A22 !important;
+}

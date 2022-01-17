@@ -3,8 +3,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { userRegistrationAC } from '../../../redux/ActionCreators/usersAC';
+import { userInitAC } from '../../../redux/ActionCreators/usersAC';
 
 
 
@@ -33,7 +33,7 @@ function Registration() {
       password: data.get('password'),
       name: data.get('name')
     };
-    fetch('http://localhost:5001/regisration', {
+    fetch('/registration', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -43,11 +43,12 @@ function Registration() {
     })
       .then(res => res.json())
       .then(data => {
-        if (data.user) {
-          alert('This email adress already used!')
+        if (!data.user) {
+         //TODO - show message to user
         } else {
-          dispatch(userRegistrationAC(data));
-          history.push('/login');
+          console.log(data);
+          dispatch(userInitAC(data));
+          history.goBack();
         }
       })
   };
@@ -84,7 +85,7 @@ function Registration() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Зарегистрироваться
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -93,7 +94,7 @@ function Registration() {
                 fullWidth
                 type="number"
                 id="phone"
-                label="Phone number"
+                label="Телефон"
                 name="phone"
                 autoComplete="Phone"
                 autoFocus
@@ -103,7 +104,7 @@ function Registration() {
                 required
                 fullWidth
                 name="name"
-                label="Name"
+                label="Имя"
                 type="text"
                 id="name"
                 autoComplete="current-name"
@@ -113,36 +114,30 @@ function Registration() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Пароль"
                 type="password"
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
-              />
+              /> */}
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Зарегистрироваться
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
-                    {/* Forgot password? */}
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {/* {"Don't have an account? Sign Up"} */}
+                  <Link to="/login" variant="body2">
+                    Уже зарегистрирован
                   </Link>
                 </Grid>
               </Grid>
-              {/* <Copyright sx={{ mt: 5 }} /> */}
             </Box>
           </Box>
         </Grid>

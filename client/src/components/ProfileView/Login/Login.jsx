@@ -3,8 +3,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { userLoginAC } from '../../../redux/ActionCreators/usersAC';
+import { userInitAC } from '../../../redux/ActionCreators/usersAC';
 
 function Login() {
 
@@ -27,7 +27,7 @@ function Login() {
       phone: data.get('phone'),
       password: data.get('password'),
     };
-    fetch('http://localhost:5001/login', {
+    fetch('/login', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -37,10 +37,12 @@ function Login() {
     })
       .then(res => res.json())
       .then(data => {
-        if (data.user) {
-          alert('This email adress already used!')
+        if (!data.user) {
+          console.log(data.message);
+          // alert('This email adress already used!')
         } else {
-          dispatch(userLoginAC(data));
+          console.log(data);
+          dispatch(userInitAC(data));
           history.push('/');
         }
       })
@@ -76,7 +78,7 @@ function Login() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Авторизация
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -85,7 +87,7 @@ function Login() {
                 fullWidth
                 type="number"
                 id="phone"
-                label="Phone number"
+                label="телефон"
                 name="phone"
                 autoComplete="Phone"
                 autoFocus
@@ -95,32 +97,33 @@ function Login() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Пароль"
                 type="password"
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
-              />
+              /> */}
+              {/* <Link to="route" target="_blank">Согласие на обработку персональных данных</Link> */}
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Войти
               </Button>
               <Grid container>
-                <Grid item xs>
+                {/* <Grid item xs>
                   <Link href="#" variant="body2">
-                    {/* Forgot password? */}
+                    Forgot password?
                   </Link>
-                </Grid>
+                </Grid> */}
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {/* {"Don't have an account? Sign Up"} */}
+                  <Link to="/registration" variant="body2">
+                    {"Нет аккаунта? Зарегистрируйтесь."}
                   </Link>
                 </Grid>
               </Grid>
