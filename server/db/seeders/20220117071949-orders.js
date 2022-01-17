@@ -7,7 +7,7 @@ module.exports = {
       {
         user_id: 1,
         specialist_id: 1,
-        status: 'завершен',
+        status: 'created',
         startinterval: 10,
         date: new Date(),
         createdAt: new Date(),
@@ -15,8 +15,16 @@ module.exports = {
       }, {
         user_id: 2,
         specialist_id: 2,
-        status: 'завершен',
+        status: 'finished',
         startinterval: 12,
+        date: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },{
+        user_id: 2,
+        specialist_id: 1,
+        status: 'closed',
+        startinterval: 14,
         date: new Date(),
         createdAt: new Date(),
         updatedAt: new Date(),
