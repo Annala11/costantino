@@ -4,10 +4,9 @@ import { Provider } from 'react-redux';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 import store from '../../redux/store';
-
+import './App.css';
 import Navigation from '../HomeViews/Navigation/Navigation';
 import Home from '../HomeViews/Home/Home';
-
 import Registration from '../ProfileView/Registration/Registration';
 import Login from '../ProfileView/Login/Login';
 import MyProfile from '../ProfileView/MyProfile/MyProfile';
@@ -16,8 +15,8 @@ import PagesStockPrice from '../PagesViews/PagesStockPrice/PagesStockPrice'
 import ServicesAndPricesList from '../PagesViews/PagesServicesAndPrices/ServicesAndPricesList';
 import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
-import './App.css';
 import MyOrders from '../ProfileView/MyOrders/MyOrders';
+import Logout from '../ProfileView/Logout/Logout.jsx';
 
 function App() {
   return (
@@ -32,7 +31,7 @@ function App() {
               <Route path="/registration" component={Registration} />
               <Route path="/login" component={Login} />
               <Route path="/profile" component={MyProfile} />
-              <Route path="/logout" exact component={Home} />
+              <Route path="/logout" exact component={Logout} />
               <Route path="/neworder" exact component={NewOrderСhoice} />
               <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
               <Route path="/stockprice" exact component={PagesStockPrice} />

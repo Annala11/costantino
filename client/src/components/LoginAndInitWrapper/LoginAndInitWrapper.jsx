@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { userInitAC } from '../../redux/ActionCreators/usersAC';
+import { branchesInitAC } from '../../redux/ActionCreators/branchesAC';
 
 function LoginAndInitWrapper({children}) {
   
@@ -22,14 +23,14 @@ function LoginAndInitWrapper({children}) {
   }, []);
 
   useEffect(() => {
-    fetch('/getbranches', {
+    fetch('/branches/getall', {
       method: 'GET',
       credentials: 'include',
     })
       .then(res => res.json())
       .then(data => {
         if (data) {
-          //dispatch(i1nitBranchesAC(data.branches));
+          dispatch(branchesInitAC(data));
         }
       })
   }, []);
