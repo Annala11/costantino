@@ -1,0 +1,8 @@
+.mainContainer{
+  width: 1400px;
+  margin: 0 auto;
+}
+
+#root{
+  background-color: black;
+}
