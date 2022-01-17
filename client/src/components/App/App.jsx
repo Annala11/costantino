@@ -17,6 +17,7 @@ import ServicesAndPricesList from '../PagesViews/PagesServicesAndPrices/Services
 import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
 import './App.css';
+import MyOrders from '../ProfileView/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -25,18 +26,19 @@ function App() {
         <BrowserRouter>
           <Navigation />
           <div className="mainContainer">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/home" exact component={Home} />
-            <Route path="/registration" component={Registration} />
-            <Route path="/login" component={Login} />
-            <Route path="/profile" component={MyProfile} />
-            <Route path="/logout" exact component={Home} />
-            <Route path="/neworder" exact component={NewOrderСhoice} />
-            <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
-            <Route path="/stockprice" exact component={PagesStockPrice} />
-            <Route path="/reviews" exact component={ReviewPage} />
-          </Switch>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/home" exact component={Home} />
+              <Route path="/registration" component={Registration} />
+              <Route path="/login" component={Login} />
+              <Route path="/profile" component={MyProfile} />
+              <Route path="/logout" exact component={Home} />
+              <Route path="/neworder" exact component={NewOrderСhoice} />
+              <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
+              <Route path="/stockprice" exact component={PagesStockPrice} />
+              <Route path="/reviews" exact component={ReviewPage} />
+              <Route path="/orders" exact component={MyOrders} />
+            </Switch>
           </div>
         </BrowserRouter>
       </LoginAndInitWrapper>
