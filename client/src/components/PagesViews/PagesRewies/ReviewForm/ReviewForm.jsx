@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+import { addReviewAC } from '../../../../redux/ActionCreators/reviewsAC';
 
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -11,6 +14,10 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Rating from '@mui/material/Rating';
+
+// import Typography from '@mui/material/Typography';
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -25,16 +32,16 @@ const BootstrapDialogTitle = (props) => {
   const { children, onClose, ...other } = props;
 
   return (
-    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+    <DialogTitle sx={{ m: 0, p: 2, position: 'relative' }} {...other}>
       {children}
       {onClose ? (
-        <IconButton
+        <IconButton style={{ position: "absolute" }}
           aria-label="close"
           onClick={onClose}
           sx={{
             position: 'absolute',
-            right: 8,
-            top: 8,
+            right: '8px',
+            top: '8px',
             color: (theme) => theme.palette.grey[500],
           }}
         >
@@ -49,28 +56,52 @@ const BootstrapDialogTitle = (props) => {
 function ReviewForm() {
 
   const [open, setOpen] = useState(true);
+  const [rating, setRating] = useState(5);
 
-  const textField = useRef(null);
+  const reviewText = useRef(null);
 
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
+  const { user } = useSelector(state => state.users);
+
+  const dispatch = useDispatch();
+
+  const titleText = useRef(null);
+
   const handleClose = () => {
     setOpen(false);
   };
 
   const handleSave = () => {
-    console.log(textField?.current?.value);
+
+    fetch('/reviews/addreview', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_id: user.id,
+        text: reviewText.current.value,
+        title: 3,// TODO - remove after test
+        rating: rating,
+        branch_id: 1 // TODO - remove after test
+      })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) {
+          console.log('Что то пошло не так!');
+        } else {
+          dispatch(addReviewAC(data));
+        }
+      })
+
     handleClose();
   };
-
+  //useSelector(currentBranch)
   return (
     <>
 
       <div>
-        {/* <Button variant="outlined" onClick={handleClickOpen}>
-          Open dialog
-        </Button> */}
         <BootstrapDialog
           onClose={handleClose}
           aria-labelledby="customized-dialog-title"
@@ -79,21 +110,51 @@ function ReviewForm() {
           <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
             Отзыв
           </BootstrapDialogTitle>
+          <Box
+            sx={{
+              '& > legend': { mt: 2 },
+            }}
+          >
+            <Rating sx={{
+              marginLeft: 2,
+            }}
+              name="simple-controlled"
+              value={rating}
+              size="large"
+              onChange={(event, newValue) => {
+                setRating(newValue);
+              }}
+            />
+          </Box>
           <DialogContent dividers>
             <Box
               sx={{
                 width: 500,
-                height: 500,
+                height: 200,
                 maxWidth: '100%',
               }}
             >
 
-              <TextField fullWidth label="fullWidth" id="fullWidth" inputRef={textField} />
+              <TextField sx={{
+                marginBottom: 2
+              }}
+                fullWidth label="Заголовок" id="fullWidth" inputRef={titleText} />
+              <TextField sx={{
+                width: '100%',
+                height: '100%',
+              }}
+                id="outlined-multiline-static"
+                label="Ваш отзыв"
+                multiline
+                rows={4}
+                inputRef={reviewText}
+              />
             </Box>
           </DialogContent>
+
           <DialogActions>
             <Button autoFocus onClick={handleSave}>
-              Сохранить
+              Отправить
             </Button>
           </DialogActions>
         </BootstrapDialog>
