@@ -48,7 +48,6 @@ function Login() {
           console.log(data.message);
           // alert('This email adress already used!')
         } else {
-          console.log(data);
           dispatch(userInitAC(data));
           history.push('/');
         }

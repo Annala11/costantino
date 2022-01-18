@@ -33,7 +33,6 @@ function LoginAndInitWrapper({children}) {
       .then(res => res.json())
       .then(data => {
         if (data) {
-          console.log(data);
           dispatch(initBranchesAC(data.branches));
           dispatch(initServicesAC(data.services));
           dispatch(initSpecialistsAC(data.specialists));

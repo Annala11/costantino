@@ -13,7 +13,6 @@ const registerUser = async (req, res) => {
       },
     });
     if (userWithSamePhone) {
-      // console.log('same phone');
       res.status(401).json({
         user: false,
         message: 'Пользователь с таким номером телефона уже существует',
@@ -44,7 +43,7 @@ const registerUser = async (req, res) => {
 
 
   } catch (error) {
-    // console.log(error.message);
+    console.log(error.message);
     res.status(401)
       .json({
         message: error.message

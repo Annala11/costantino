@@ -46,7 +46,6 @@ function Registration() {
         if (!data.user) {
          //TODO - show message to user
         } else {
-          console.log(data);
           dispatch(userInitAC(data));
           history.push('/');
         }

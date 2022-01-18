@@ -46,7 +46,7 @@ export default function MyCarousel() {
       <Carousel 
         data={data}
         time={2500}
-        width="850px"
+        width="100%"
         height="500px"
         captionStyle={captionStyle}
         radius="10px"
@@ -63,7 +63,7 @@ export default function MyCarousel() {
         thumbnailWidth="100px"
         style={{
           textAlign: "center",
-          maxWidth: "850px",
+          maxWidth: "1400px",
           maxHeight: "500px",
           margin: "40px auto",
         }}
