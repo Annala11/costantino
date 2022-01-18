@@ -17,6 +17,7 @@ import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
 import MyOrders from '../ProfileView/MyOrders/MyOrders';
 import Logout from '../ProfileView/Logout/Logout.jsx';
+import Footer from '../HomeViews/Footer/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <BrowserRouter>
           <Navigation />
           <div className="mainContainer">
+
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/home" exact component={Home} />
@@ -39,6 +41,7 @@ function App() {
               <Route path="/orders" exact component={MyOrders} />
             </Switch>
           </div>
+          <Footer />
         </BrowserRouter>
       </LoginAndInitWrapper>
     </Provider>
