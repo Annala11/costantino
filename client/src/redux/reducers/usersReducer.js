@@ -6,9 +6,9 @@ const initialState = {
 };
 
 export const usersReducer = (state = initialState, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case usersAT.INIT_USER:
+      console.log(action.payload, 'action');
       return { ...state, user: action.payload.user };
 
     case usersAT.INIT_ERROR_USER:
