@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 
+// import { initReviewsAC } from '../../../redux/ActionCreators/reviewsAC';
 
 
 import HomeReviewsCard from './HomeReviewsCard';
@@ -12,8 +13,9 @@ import HomeReviewsCard from './HomeReviewsCard';
 function HomeReviewsList() {
 
   useEffect(() => {
-    fetch('/reviews')
+    fetch('/reviews/bestreviews')
     .then(res => res.json())
+    .then(console.log())
     // .then(data => dispatch(initReviewsAC(data.reviews)))
   }, [])
 
@@ -25,5 +27,4 @@ function HomeReviewsList() {
     </div>
   );
 }
-
 export default HomeReviewsList;
