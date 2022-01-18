@@ -1,4 +1,4 @@
-const { Review, sequelize } = require('../db/models');
+const { Review } = require('../db/models');
 
 // Вытащить все отзывы
 const allReviews = async (req, res) => {
@@ -18,12 +18,13 @@ const allReviews = async (req, res) => {
 const addReview = async (req, res) => {
   try {
 
-    const { title, text, rating, user_id, branch_id } = req.body;
+    const { title, text, rating, top_review, user_id, branch_id } = req.body;
 
     const review = await Review.create({
       title,
       text,
       rating,
+      top_review,
       user_id,
       branch_id,
 
@@ -45,7 +46,7 @@ const bestReviews = async (req, res) => {
     const reviews = await Review.findAll({
       order: [['updatedAt', 'DESC']],
       where: { top_review: true },
-      attributes: ['id', 'title', 'text', 'rating', 'branch_id', 'user_id']
+      attributes: ['id', 'title', 'text', 'rating', 'top_review', 'branch_id', 'user_id']
     });
 
 
