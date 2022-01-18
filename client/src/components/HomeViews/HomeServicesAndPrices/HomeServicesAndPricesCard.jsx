@@ -21,9 +21,20 @@ function HomeServicesAndPricesCard({categoryParent}) {
         <Typography gutterBottom variant="h5" component="div">
         {categoryParent.name}
         </Typography>
+        {categoryParent.name === 'Женский зал' && 
         <Typography variant="body2" color="text.secondary">
-          {categoryParent.discription ? categoryParent.discription : 'тут будет описание, когда засеим в базе discription:)  '}
-        </Typography>
+          {categoryParent.discription ? categoryParent.discription : 'Лучшие специалисты нашего салона, помогут подчеркнуть твою индивидуальность и красоту!'}
+        </Typography>}
+        {categoryParent.name === 'Мужской зал' && 
+        <Typography variant="body2" color="text.secondary">
+          {categoryParent.discription ? categoryParent.discription : 'Твоя брутальность и стиль - именно в этом мы разбираемся лучше всего! Ты не останешься без женского внимания.'}
+        </Typography>}
+        {categoryParent.name === 'Детский зал' && 
+        <Typography variant="body2" color="text.secondary">
+          {categoryParent.discription ? categoryParent.discription : 'Повседневные стрижки и подготовка Вашего ребенка к детским, но все же - серьезным мероприятием, мы с радостью и весельем поможем Вам!'}
+        </Typography>}
+
+
       </CardContent>
       <CardActions>
         <Button size="small">
