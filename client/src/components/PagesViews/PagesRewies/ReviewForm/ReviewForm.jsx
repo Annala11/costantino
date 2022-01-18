@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-// import { useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addReviewAC } from '../../../../redux/ActionCreators/reviewsAC';
 
 import Button from '@mui/material/Button';
@@ -15,6 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Rating from '@mui/material/Rating';
+// import ReviewMessageModal from '../ReviewMessageModal/ReviewMessageModal';
 
 // import Typography from '@mui/material/Typography';
 
@@ -58,9 +59,24 @@ function ReviewForm() {
   const [open, setOpen] = useState(true);
   const [rating, setRating] = useState(5);
 
+  // const [messageModal, setMessageModal] = useState(false); for messager after write review
+
   const reviewText = useRef(null);
 
-  const { user } = useSelector(state => state.users);
+  // const { user } = useSelector(state => state.users);
+  // console.log('in review form');
+  // console.log(user);
+
+  // TODO - remove after test
+  // const user = {
+  //   id: 4,
+  //   phone: 999,
+  //   name: 'anna'
+  // };
+  /////////////
+
+  console.log('in review form');
+  console.log(user);
 
   const dispatch = useDispatch();
 
@@ -96,8 +112,10 @@ function ReviewForm() {
       })
 
     handleClose();
+    // setMessageModal(true);
+
   };
-  //useSelector(currentBranch)
+  // TODO - select branch useSelector(currentBranch)
   return (
     <>
 
@@ -159,6 +177,7 @@ function ReviewForm() {
           </DialogActions>
         </BootstrapDialog>
       </div>
+      {/* {messageModal && <ReviewMessageModal open={!messageModal} onClose={setMessageModal} />} */}
     </>
   );
 }
