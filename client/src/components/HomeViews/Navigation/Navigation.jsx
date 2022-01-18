@@ -153,7 +153,7 @@ function Navigation() {
               { text: 'ВОЙТИ', link: '/login' }
             ].map((el) => (
               <ListItem button key={el.text}>
-                <Link to={el.link}> {el.text} </Link>
+                <Link to={el.link} onClick={handleDrawerClose} > {el.text} </Link>
               </ListItem>
             ))}
           </List>}

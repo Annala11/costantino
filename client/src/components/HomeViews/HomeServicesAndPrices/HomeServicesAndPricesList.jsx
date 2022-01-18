@@ -19,7 +19,7 @@ function HomeServicesAndPricesList() {
         const categoriesParent = categories?.filter(category => category.id <= 3)
 
   return (
-    <div className="homePageServicesContainer" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around'}}>
+    <div className="homePageServicesContainer" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around', padding:'70px'}}>
       {categoriesParent && categoriesParent.map(categoryParent => <HomeServicesAndPricesCard key={ categoryParent.id}  categoryParent={ categoryParent } />)}
     </div>
   );
