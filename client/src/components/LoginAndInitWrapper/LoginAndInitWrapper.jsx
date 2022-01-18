@@ -2,7 +2,10 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { userInitAC } from '../../redux/ActionCreators/usersAC';
-import { branchesInitAC } from '../../redux/ActionCreators/branchesAC';
+import { initBranchesAC } from '../../redux/ActionCreators/branchesAC';
+import { initServicesAC } from '../../redux/ActionCreators/servicesAC';
+import { initSpecialistsAC } from '../../redux/ActionCreators/specialistsAC';
+import { initCategoriesAC } from '../../redux/ActionCreators/categoriesAC';
 
 function LoginAndInitWrapper({children}) {
   
@@ -23,14 +26,18 @@ function LoginAndInitWrapper({children}) {
   }, []);
 
   useEffect(() => {
-    fetch('/branches/getall', {
+    fetch('/initdata', {
       method: 'GET',
       credentials: 'include',
     })
       .then(res => res.json())
       .then(data => {
         if (data) {
-          dispatch(branchesInitAC(data));
+          console.log(data);
+          dispatch(initBranchesAC(data.branches));
+          dispatch(initServicesAC(data.services));
+          dispatch(initSpecialistsAC(data.specialists));
+          dispatch(initCategoriesAC(data.categories));
         }
       })
   }, []);
