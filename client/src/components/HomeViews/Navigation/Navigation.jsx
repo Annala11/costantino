@@ -19,7 +19,7 @@ import ListItem from '@mui/material/ListItem';
 
 import './Navigation.css'
 
-const drawerWidth = 260;
+const drawerWidth = 360;//Math.min(window.innerWidth, 400);
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -86,7 +86,6 @@ function Navigation() {
       <CssBaseline />
       <AppBar className='navBlockMenu' position="fixed" open={open}
         style={{
-          background: 'black',
           color: '#FFE4B5',
           textShadow: `1px 1px 2px pink`
         }}>
@@ -115,6 +114,7 @@ function Navigation() {
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
+            backgroundColor: "#000" ,
             boxSizing: 'border-box',
           },
         }}
