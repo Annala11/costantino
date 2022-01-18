@@ -5,7 +5,6 @@ const initialState = {
 };
 
 export const specialistsReducer = (state = initialState, action) => {
-
   switch (action.type) {
 
     case specialistsAT.INIT_SPECIALISTS:

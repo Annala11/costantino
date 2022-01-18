@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { initCategoriesAC } from '../../../redux/ActionCreators/categoriesAC';
+import React from 'react';
+import { useSelector } from 'react-redux';
+// import { initCategoriesAC } from '../../../redux/ActionCreators/categoriesAC';
 import { Card, CardActionArea, CardContent, Container, Typography } from '@mui/material';
-import { initServicesAC } from '../../../redux/ActionCreators/servicesAC';
+// import { initServicesAC } from '../../../redux/ActionCreators/servicesAC';
 import WomenServices from './WomenServices';
 import MenServices from './MenServices';
 import KidServices from './KidServices';
@@ -11,7 +11,7 @@ import KidServices from './KidServices';
 
 function ServicesAndPricesList() {
 
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const services = useSelector(state => state.services.services);
   const categories = useSelector(state => state.categories.categories);
 
@@ -27,17 +27,17 @@ function ServicesAndPricesList() {
   const categoriesParentId2 = categories.filter(category => category.parent_id === 2);
   const categoriesParentId3 = categories.filter(category => category.parent_id === 3);
 
-  useEffect(() => {
-    fetch('/categories')
-      .then(response => response.json())
-      .then(data => dispatch(initCategoriesAC(data.categories)))
-  }, [])
+  // useEffect(() => {
+  //   fetch('/categories')
+  //     .then(response => response.json())
+  //     .then(data => dispatch(initCategoriesAC(data.categories)))
+  // }, [])
 
-  useEffect(() => {
-    fetch('/services')
-      .then(response => response.json())
-      .then(data => dispatch(initServicesAC(data.services)))
-  }, [])
+  // useEffect(() => {
+  //   fetch('/services')
+  //     .then(response => response.json())
+  //     .then(data => dispatch(initServicesAC(data.services)))
+  // }, [])
 
   return (
     <Container maxWidth="sm">
