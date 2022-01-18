@@ -43,7 +43,7 @@ function ServicesAndPricesList() {
           </CardContent>
         </CardActionArea>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ marginTop: "10px", width: "100%" }}>
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -56,7 +56,7 @@ function ServicesAndPricesList() {
           </CardContent>
         </CardActionArea>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ marginTop: "10px", width: "100%" }}>
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">

@@ -1,0 +1,4 @@
+.servicerow:hover {
+  cursor: pointer; 
+  background-color: silver;
+}
