@@ -5,6 +5,7 @@ import ReviewBlock from '../ReviewBlock/ReviewBlock.jsx';
 import ReviewForm from '../ReviewForm/ReviewForm.jsx';
 import { initReviewsAC } from '../../../../redux/ActionCreators/reviewsAC';
 import styles from './ReviewList.module.css';
+// import ReviewMessageModal from '../ReviewMessageModal/ReviewMessageModal.jsx';
 
 import Button from '@mui/material/Button';
 // import { StylesContext } from '@material-ui/styles';
@@ -12,6 +13,7 @@ import Button from '@mui/material/Button';
 function ReviewsList() {
 
   const [modal, setModal] = useState(false);
+
   const { reviews } = useSelector(state => state.reviews);
   const dispatch = useDispatch();
 
@@ -32,6 +34,7 @@ function ReviewsList() {
       <div className={styles.containerReview}>
         {reviews.length ? reviews.map((review) => <ReviewBlock key={review.id} review={review} />) : <div>Нет Отзывов!</div>}
         {modal && <ReviewForm isOpen={setModal} />}
+        {/* {messageModal && <ReviewMessageModal isOpen={setMessageModal} />} */}
       </div>
 
 
@@ -40,5 +43,4 @@ function ReviewsList() {
   );
 }
 
-//<div className={styles.reviewItemContainer}>
 export default ReviewsList;
