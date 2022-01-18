@@ -61,6 +61,8 @@ function ReviewForm() {
   const reviewText = useRef(null);
 
   const { user } = useSelector(state => state.users);
+  console.log('in review form');
+  console.log(user);
 
   const dispatch = useDispatch();
 

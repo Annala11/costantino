@@ -12,3 +12,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.card {
+  max-width: 345;
+  min-width: 200;
+  background-color: aliceblue;
+  border: 'solid 2px darkgray';
+  border-radius: '10px';
+  height: 200;
+  width: 300;
+  margin-bottom: 5;
+}
