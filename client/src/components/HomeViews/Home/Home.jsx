@@ -2,7 +2,6 @@ import React from 'react';
 import HomeBilboard from '../HomeBilboard/HomeBilboard';
 import HomeServicesAndPricesList from '../HomeServicesAndPrices/HomeServicesAndPricesList';
 import Maps from '../Maps/Maps';
-import Footer from '../Footer/Footer'
 import HomeReviewsList from '../HomeReviews/HomeReviewsList';
 
 function Home() {
@@ -12,7 +11,6 @@ function Home() {
       <HomeServicesAndPricesList />
       <Maps />
       <HomeReviewsList />
-      <Footer />
     </>
   );
 }

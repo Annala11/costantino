@@ -1,9 +1,11 @@
 .mainContainer{
   max-width: 1400px;
+  min-height: 900px;
   margin: 0 auto;
 }
 
 #root{
+min-height: 100vh;
 background: #010B13;
 color: #000000;
 background: linear-gradient(to bottom, #010B13 0%, #000004 100%);

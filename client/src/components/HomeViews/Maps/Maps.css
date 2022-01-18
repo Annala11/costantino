@@ -1,3 +1,35 @@
 .homePageMapBlock{
   height: 500px;
+  position: relative;
+}
+
+.homePageMapContacts{
+  padding: 40px;
+  top: 20%;
+  left: 5%;
+  height: 60%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+  color: #DDD;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size:1.3em;
+  
+}
+.homePageMapContacts span{
+  display: block;
+  margin: 15px;
+}
+
+@media screen and (min-width: 900px) { 
+  .homePageMapContacts {
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 900px) { 
+  .homePageMapContacts {
+    
+  }
 }

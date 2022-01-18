@@ -13,6 +13,11 @@ function Maps() {
 
   return (
     <div className="homePageMapBlock">
+      <span className="homePageMapContacts">
+        <span>Это наш телефон: +7(112)4242343</span>
+        <span>Это адрес: ул.Кирочная 19, кв 571</span>
+        <span>Работаем ежедневно с 10:00 до 20:00</span>
+      </span>
       <YMaps>
         <Map state={mapState} width={'100%'} height={'100%'}>
           <Placemark 
