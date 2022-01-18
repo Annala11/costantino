@@ -14,6 +14,7 @@ function MenServices({ servicesMen, categoryParentId2 }) {
   return (
     <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
       <AccordionSummary
+        sx={{ width: '100%' }}
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1bh-content"
         id="panel1bh-header"

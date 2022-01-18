@@ -17,39 +17,41 @@ function MyOrdersCars({ order }) {
   const newSpec = specialists.filter(spec => spec.id === order.specialist_id);
 
   return (
-    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1bh-content"
-        id="panel1bh-header"
-      >
-        <Typography sx={{ width: '33%', flexShrink: 0 }}>{order.date}</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        {/* <Divider variant="inset" component="li" /> */}
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src={newSpec[0]?.photo} />
-          </ListItemAvatar>
-          <ListItemText
-            primary={newSpec[0]?.name}
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  
-                </Typography>
-                {' — Do you have Paris recommendations? Have you ever…'}
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-      </AccordionDetails>
-    </Accordion>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary 
+        sx={{ width: '100%'}}
+          onChange={handleChange('panel1')}
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ marginLeft: "30px", minHeight: "40px", flexShrink: 0 }}>{order.date}</Typography>
+        </AccordionSummary>
+        <AccordionDetails >
+          {/* <Divider variant="inset" component="li" /> */}
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar alt="Cindy Baker" src={newSpec[0]?.photo} />
+            </ListItemAvatar>
+            <ListItemText
+              primary={newSpec[0]?.name}
+              secondary={
+                <React.Fragment>
+                  <Typography
+                    sx={{ display: 'inline' }}
+                    component="span"
+                    variant="body2"
+                    color="text.primary"
+                  >
+
+                  </Typography>
+                  {' — Do you have Paris recommendations? Have you ever…'}
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+        </AccordionDetails>
+      </Accordion>
   );
 }
 
