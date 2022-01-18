@@ -15,7 +15,7 @@ dotenv.config();
 
 const {
   PORT = 5001,
-  SESSION_SECRET = process.env.SESSION_SECRET,
+  SESSION_SECRET = process.env.SESSION_SECRET ? process.env.SESSION_SECRET : "secret",
 } = process.env;
 console.log(process.env.SESSION_SECRET);
 const sessionConfig = {

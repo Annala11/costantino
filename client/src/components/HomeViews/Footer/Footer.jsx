@@ -24,7 +24,7 @@ function Footer() {
               </Link>
             </Box>
             <Box>
-              <Link href="/" color="inherit">
+              <Link to="/" color="inherit">
 
               </Link>
             </Box>
