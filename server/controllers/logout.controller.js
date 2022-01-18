@@ -1,5 +1,4 @@
 const logout = async (req, res) => {
-  console.log(1111);
   req.session.destroy((error) => {
     if (error) {
       return res.status(500).json({

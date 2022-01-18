@@ -20,8 +20,7 @@ const login = async (req, res) => {
         message: 'Пользователя с таким телефоном не существует',
       })
     }
-    // console.log(12121);
-    // const isValidPassword = await bcrypt.compare(password, userByPhone.password);
+      // const isValidPassword = await bcrypt.compare(password, userByPhone.password);
     // const isValidPassword = true; //TODO - remove after test
 
     // if (!isValidPassword) {

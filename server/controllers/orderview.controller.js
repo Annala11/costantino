@@ -2,7 +2,6 @@ const { Order } = require('../db/models');
 
 const getOrders = async (req, res) => {
   //специалисты и ордеры
-  console.log(1235);
   const { user_id } = req.body
   try {
 

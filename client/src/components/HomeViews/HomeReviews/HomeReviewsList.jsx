@@ -18,7 +18,6 @@ function HomeReviewsList() {
   }, [])
 
   const reviewsList = useSelector(state => state.reviews.reviews);
-  console.log(reviewsList);
 
   return (
     <div style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around', padding:'70px'}}>

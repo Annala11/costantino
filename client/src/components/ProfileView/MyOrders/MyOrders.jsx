@@ -9,20 +9,9 @@ function MyOrders() {
   // const specialists = useSelector(state => state.specialists.specialists);
   const orders = useSelector(state => state.orders.orders);
   const userId = useSelector(state => state.users.user.id);
-  console.log(userId, 'userId');
   // заказ авторизированного пользователя
   const orderUserId = orders.filter(order => order.user_id === userId);
-  // console.log(orderUserId, 'orderUserId');
-  // console.log(userId, 'userId');
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   fetch('/ordersview')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       dispatch(initOrdersAC(data.orders));
-  //       dispatch(initSpecialistsAC(data.specialists));
-  //     })
-  // }, [])
   useEffect(() => {
     fetch('/ordersview', {
       method: 'POST',
