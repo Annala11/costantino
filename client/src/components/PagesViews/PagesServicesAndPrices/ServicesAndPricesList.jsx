@@ -6,6 +6,7 @@ import { Card, CardActionArea, CardContent, Container, Typography } from '@mui/m
 import WomenServices from './WomenServices';
 import MenServices from './MenServices';
 import KidServices from './KidServices';
+import './ServicesAndPricesList.css';
 // import ServicesAndPricesItem from './ServicesAndPricesItem';
 
 
@@ -27,21 +28,9 @@ function ServicesAndPricesList() {
   const categoriesParentId2 = categories.filter(category => category.parent_id === 2);
   const categoriesParentId3 = categories.filter(category => category.parent_id === 3);
 
-  // useEffect(() => {
-  //   fetch('/categories')
-  //     .then(response => response.json())
-  //     .then(data => dispatch(initCategoriesAC(data.categories)))
-  // }, [])
-
-  // useEffect(() => {
-  //   fetch('/services')
-  //     .then(response => response.json())
-  //     .then(data => dispatch(initServicesAC(data.services)))
-  // }, [])
-
   return (
-    <Container maxWidth="sm">
-      <Card sx={{ maxWidth: 345 }}>
+    <Container className="servicesAndPrices" sx={{ width: "60%" }}>
+      <Card sx={{ marginTop: "50px", width: "100%" }}>
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -54,7 +43,7 @@ function ServicesAndPricesList() {
           </CardContent>
         </CardActionArea>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ marginTop: "10px", width: "100%" }}>
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -67,7 +56,7 @@ function ServicesAndPricesList() {
           </CardContent>
         </CardActionArea>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ marginTop: "10px", width: "100%" }}>
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
