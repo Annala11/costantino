@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomeReviews() {
+function HomeReviewsCard() {
   return (
     <div>
       Reviews
@@ -8,4 +8,4 @@ function HomeReviews() {
   );
 }
 
-export default HomeReviews;
+export default HomeReviewsCard;
