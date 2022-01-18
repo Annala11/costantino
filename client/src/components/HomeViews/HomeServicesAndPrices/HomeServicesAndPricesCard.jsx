@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 function HomeServicesAndPricesCard({categoryParent}) {
   return (
-    <Card sx={{ maxWidth: 345, margin:'20px' }}>
+    <Card sx={{ maxWidth: 345,}}>
       {/* <CardMedia
         component="img"
         height="140"

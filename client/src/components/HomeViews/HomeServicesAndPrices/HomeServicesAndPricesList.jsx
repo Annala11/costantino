@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { initCategoriesAC } from '../../../redux/ActionCreators/categoriesAC';
 
 import HomeServicesAndPricesCard from './HomeServicesAndPricesCard';
-import './HomeServicesAndPricesCard.css';
+import './HomeServicesAndPricesList.css';
 
 function HomeServicesAndPricesList() {
 
@@ -19,7 +19,7 @@ function HomeServicesAndPricesList() {
         const categoriesParent = categories?.filter(category => category.id <= 3)
 
   return (
-    <div className="homePageServicesContainer" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around', padding:'70px'}}>
+    <div className='homePageServicesContainer'>
       {categoriesParent && categoriesParent.map(categoryParent => <HomeServicesAndPricesCard key={ categoryParent.id}  categoryParent={ categoryParent } />)}
     </div>
   );
