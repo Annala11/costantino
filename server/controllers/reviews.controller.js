@@ -1,5 +1,6 @@
-const { Review } = require('../db/models');
+const { Review, sequelize } = require('../db/models');
 
+// Вытащить все отзывы
 const allReviews = async (req, res) => {
   try {
     const reviews = await Review.findAll({
@@ -13,6 +14,7 @@ const allReviews = async (req, res) => {
 
 }
 
+// Добавить отзыв в БД
 const addReview = async (req, res) => {
   try {
 
@@ -25,7 +27,7 @@ const addReview = async (req, res) => {
       user_id,
       branch_id,
 
-    });
+    })
 
     res.status(201).json(review);
 
@@ -35,7 +37,29 @@ const addReview = async (req, res) => {
 
 }
 
+
+// Вытащить 3 лучших отзывов по дате
+const bestReviews = async (req, res) => {
+  try {
+
+    const reviews = await Review.findAll({
+      order: [['updatedAt', 'DESC']],
+      where: { top_review: true },
+      attributes: ['id', 'title', 'text', 'rating', 'branch_id', 'user_id']
+    });
+
+
+    res.status(200).json(reviews);
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+
+}
+
+
 module.exports = {
   allReviews,
   addReview,
+  bestReviews
 };
