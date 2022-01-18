@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { addReviewAC } from '../../../../redux/ActionCreators/reviewsAC';
 
 import Button from '@mui/material/Button';
@@ -63,7 +63,7 @@ function ReviewForm() {
 
   const reviewText = useRef(null);
 
-  // const { user } = useSelector(state => state.users);
+  const { user } = useSelector(state => state.users);
   // console.log('in review form');
   // console.log(user);
 
