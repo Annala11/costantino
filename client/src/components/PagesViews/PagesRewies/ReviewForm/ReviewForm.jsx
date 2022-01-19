@@ -63,9 +63,6 @@ function ReviewForm() {
 
   const { user } = useSelector(state => state.users);
 
-  console.log('in review form');
-  console.log(user);
-
   const dispatch = useDispatch();
 
   const reviewText = useRef(null);
@@ -157,6 +154,7 @@ function ReviewForm() {
                 rows={4}
                 inputRef={reviewText}
               />
+
             </Box>
           </DialogContent>
 
