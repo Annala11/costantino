@@ -48,7 +48,6 @@ const bestReviews = async (req, res) => {
       attributes: ['id', 'title', 'text', 'rating', 'branch_id', 'user_id']
     });
 
-
     res.status(200).json(reviews);
 
   } catch (error) {
