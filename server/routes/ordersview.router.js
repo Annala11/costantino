@@ -1,4 +1,4 @@
-const router = require('express').Router(); //TODO
+const router = require('express').Router();
 
 const { getOrders, allOrders, changeStatus } = require('../controllers/orderview.controller');
 
@@ -9,7 +9,6 @@ router.route('/')
 router.route('/allorders')
   //вывод всех для админ панели
   .get(allOrders)
-
 router.route('/changestatus')
   // изменение статуса услуги
   .post(changeStatus)
