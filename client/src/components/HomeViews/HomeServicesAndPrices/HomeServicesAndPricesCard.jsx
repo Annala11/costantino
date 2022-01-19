@@ -33,8 +33,6 @@ function HomeServicesAndPricesCard({categoryParent}) {
         <Typography variant="body2" color="text.secondary">
           {categoryParent.discription ? categoryParent.discription : 'Повседневные стрижки и подготовка Вашего ребенка к детским, но все же - серьезным мероприятием, мы с радостью и весельем поможем Вам!'}
         </Typography>}
-
-
       </CardContent>
       <CardActions>
         <Button size="small">
