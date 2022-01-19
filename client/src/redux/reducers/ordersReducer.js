@@ -13,6 +13,11 @@ export const ordersReducer = (state = initialState, action) => {
         ...state,
         orders: action.payload
       }
+    case ordersAT.INIT_ORDERS_FOR_ADMIN:
+      return {
+        ...state,
+        allOrdersForAdmin: action.payload
+      }
 
     default:
       return state;
