@@ -1,27 +1,17 @@
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
+
+import ImageShadow from 'react-image-shadow';
+import 'react-image-shadow/assets/index.css';
 
 
 
 function HomeSpecialistsCard({ specialist }) {
-  return (
-    <Card sx={{ maxWidth: 345, }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image= {specialist.photo}
-        alt="photo"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {specialist.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {specialist.description}
-        </Typography>
-      </CardContent>
 
-    </Card>
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <ImageShadow style={{ margin: '15px' }} src={specialist.photo} />
+      <h3 style={{ color: '#FFE4B5' }}>{specialist.name}</h3>
+    </div>
   );
 }
 
