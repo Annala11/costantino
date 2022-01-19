@@ -19,23 +19,25 @@ import Logout from '../ProfileView/Logout/Logout.jsx';
 import Footer from '../HomeViews/Footer/Footer';
 import SpecialistsList from '../PagesViews/PagesSpecialists/SpecialistsList';
 import NewOrder from '../NewOrdersViews/NewOrder/NewOrder';
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <Provider store={store}>
       <LoginAndInitWrapper>
         <BrowserRouter>
+          <ScrollToTop />
           <Navigation />
           <div className="mainContainer">
 
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/home"  component={Home} />
+              <Route path="/home" component={Home} />
               <Route path="/registration" component={Registration} />
               <Route path="/login" component={Login} />
               <Route path="/profile" component={MyProfile} />
               <Route path="/logout" exact component={Logout} />
-              <Route path="/servicesandprices" exact component={ServicesAndPricesList} />  
+              <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
               <Route path="/servicesandprices/:catid" component={ServicesAndPricesList} />
               <Route path="/stockprice" component={PagesStockPrice} />
               <Route path="/reviews" component={ReviewPage} />

@@ -12,9 +12,14 @@ import Switch from '@mui/material/Switch';
 import { Link } from 'react-router-dom';
 
 
-function SpecialistsList() {
-
-  const specialists = useSelector(state => state.specialists.specialists)
+function SpecialistsList({specs}) {
+  let specialists;
+  let statespecs = useSelector(state => state.specialists.specialists);
+  if(specs){
+    specialists = specs;
+  }else{
+    specialists = statespecs;
+  }
 
 
   const [specialistId, setSpecialistId] = useState(0);
@@ -30,12 +35,12 @@ function SpecialistsList() {
   };
 
   return (
-    <>
+    <div className="allSpecialistsBlock">
       <List dense sx={{ width: '100%', maxWidth: '80%', bgcolor: 'background.paper', textAlign: 'center' }}>
         {specialists.length && specialists.map(specialist =>
 
 
-          <ListItem sx={{ marginTop: '50px' }}
+          <ListItem className="specialistBlock"
             key={specialist.id}
             secondaryAction={
               <Checkbox
@@ -67,7 +72,7 @@ function SpecialistsList() {
       <button className='specialistButton'>
         <Link className='specialistButtonLink' to='/neworder'> Выбрать  специалиста </Link>
       </button>
-    </>
+    </div>
   )
 }
 export default SpecialistsList;

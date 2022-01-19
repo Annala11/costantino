@@ -2,10 +2,11 @@ import React from 'react';
 import NewOrderServices from '../NewOrderServices/NewOrderServices';
 import NewOrderSpecialists from '../NewOrderSpecialists/NewOrderSpecialists';
 import './NewOrder.css';
-function NewOrder() {
-  const queryParams = new URLSearchParams(window.location.search)
-  const serviceid = queryParams.get("serviceid")
-  const specid = queryParams.get("specid")
+function NewOrder({serv_id, spec_id}) {
+  const queryParams = new URLSearchParams(window.location.search);
+  const serviceid = serv_id ? serv_id : queryParams.get("serviceid");
+  const specid = spec_id ? spec_id : queryParams.get("specid");
+
   return (
     <div>
       <div>
@@ -15,12 +16,18 @@ function NewOrder() {
       </div>
       <div className="orderTopContainer">
         <div>
-          <NewOrderServices serviceid={serviceid} />
+          <NewOrderServices serviceid={serviceid} specid={specid} />
         </div>
         <div>
-          <NewOrderSpecialists specid={specid} />
+          <NewOrderSpecialists specid={specid} serviceid={serviceid} />
         </div>
       </div>
+      { 
+      specid && serviceid &&
+      <div className="orderCalendar">
+        Calendar
+      </div>
+      }
     </div>
   );
 }

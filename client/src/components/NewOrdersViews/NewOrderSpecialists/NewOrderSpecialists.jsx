@@ -1,23 +1,43 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import SpecialistsList from '../../PagesViews/PagesSpecialists/SpecialistsList';
 import NewOrderSpec from '../NewOrderSpec/NewOrderSpec';
+import { getServiceRootCategoryId } from '../../../helpers/main';
 
-function NewOrderSpecialists({specid}) {
+function NewOrderSpecialists({ specid, serviceid }) {
+  let categoryid;
   let spec;
-  if(specid){
-    const specs = useSelector(state=>state.specialists.specialists);
-    spec = specs.find((el)=>el.id === +specid);
-    console.log(spec);
+  let specsToChoose;
+
+  if(serviceid){
+    categoryid = getServiceRootCategoryId(serviceid);
   }
+
+  const specs = useSelector(state => state.specialists.specialists);
+
+  if (specid) {
+    spec = specs.find((el) => el.id === +specid);
+  }else if(categoryid){
+    console.log(categoryid);
+    specsToChoose = specs.filter((el) => {
+      console.log(el.catids?.includes(categoryid));
+      return el.catids?.includes(categoryid);
+    });
+  }
+  
   return (
     <div>
-      { specid ? 
+      {specid ?
         <div>
           <div>Ваш мастер:</div>
-          <NewOrderSpec spec={ spec } />
+          <NewOrderSpec spec={spec} />
         </div>
         :
-      specid}
+        <div>
+          <div>Выберите мастера:</div>
+          <SpecialistsList specs={specsToChoose}/>
+        </div>
+      }
     </div>
   );
 }
