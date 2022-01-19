@@ -12,6 +12,7 @@ function HomeSpecialistsList() {
 
   return (
     <>
+      <div style={{margin:'15px'}} className='line'></div>
       <h2 style={{ color: '#FFE4B5', text: 'bold' }}>
         Наши специалисты
       </h2>
