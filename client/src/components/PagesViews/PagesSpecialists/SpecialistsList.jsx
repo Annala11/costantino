@@ -9,15 +9,16 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 // import Checkbox from '@mui/material/Checkbox';
 import Avatar from '@mui/material/Avatar';
 import Switch from '@mui/material/Switch';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
-function SpecialistsList({specs}) {
+function SpecialistsList({ specs }) {
   let specialists;
   let statespecs = useSelector(state => state.specialists.specialists);
-  if(specs){
+  const history = useHistory();
+  if (specs) {
     specialists = specs;
-  }else{
+  } else {
     specialists = statespecs;
   }
 
@@ -25,7 +26,6 @@ function SpecialistsList({specs}) {
   const [specialistId, setSpecialistId] = useState(0);
 
   const handleToggle = (event) => {
-    console.log(event.target.value);
     if (event.target.value === 'off') {
       setSpecialistId(-1)
     } else {
@@ -33,6 +33,15 @@ function SpecialistsList({specs}) {
       setSpecialistId(newId);
     }
   };
+
+  const handleSpec = () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const serviceid = queryParams.get("serviceid");
+    let url = serviceid ?
+      `/neworder?serviceid=${serviceid}&specid=${specialistId}` :
+      `/neworder?specid=${specialistId}`;
+    history.push(url);
+  }
 
   return (
     <div className="allSpecialistsBlock">
@@ -68,9 +77,9 @@ function SpecialistsList({specs}) {
         )
         }
       </List>
-      
-      <button className='specialistButton'>
-        <Link className='specialistButtonLink' to='/neworder'> Выбрать  специалиста </Link>
+
+      <button className='specialistButton' onClick={handleSpec}>
+        Выбрать  специалиста
       </button>
     </div>
   )
