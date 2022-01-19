@@ -13,13 +13,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory } from 'react-router';
-import { useDispatch } from 'react-redux';
-import { userInitAC } from '../../../redux/ActionCreators/usersAC';
+import { useDispatch, useSelector } from 'react-redux';
+import { userErrorAC, userInitAC } from '../../../redux/ActionCreators/usersAC';
 
 
 
 function Registration() {
-
+  const error = useSelector(state => state.users.error);
   const dispatch = useDispatch();
   let history = useHistory();
 
@@ -44,9 +44,9 @@ function Registration() {
       .then(res => res.json())
       .then(data => {
         if (!data.user) {
-         //TODO - show message to user
+          dispatch(userErrorAC(data.error));
         } else {
-          dispatch(userInitAC(data));
+          dispatch(userInitAC(data.user));
           history.push('/');
         }
       })
@@ -118,10 +118,6 @@ function Registration() {
                 id="password"
                 autoComplete="current-password"
               />
-              {/* <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              /> */}
               <Button
                 type="submit"
                 fullWidth
@@ -137,6 +133,11 @@ function Registration() {
                   </Link>
                 </Grid>
               </Grid>
+              {error &&
+                <Grid className="authorizeError">
+                  {error}
+                </Grid>
+              }
             </Box>
           </Box>
         </Grid>

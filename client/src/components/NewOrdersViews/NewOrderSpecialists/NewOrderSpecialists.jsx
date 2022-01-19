@@ -18,9 +18,7 @@ function NewOrderSpecialists({ specid, serviceid }) {
   if (specid) {
     spec = specs.find((el) => el.id === +specid);
   }else if(categoryid){
-    console.log(categoryid);
     specsToChoose = specs.filter((el) => {
-      console.log(el.catids?.includes(categoryid));
       return el.catids?.includes(categoryid);
     });
   }

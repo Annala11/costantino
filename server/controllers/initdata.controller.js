@@ -1,4 +1,4 @@
-const { Branch, Service, Specialist, Category, SpecialistCategory } = require('../db/models');
+const { Branch, Service, Specialist, Category } = require('../db/models');
 
 const initData = async (req, res) => {
 

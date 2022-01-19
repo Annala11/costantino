@@ -1,7 +1,7 @@
 .mainContainer{
   max-width: 1400px;
   min-height: 900px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 #root{
@@ -43,3 +43,19 @@ box-shadow: inset 0 1px 0 #101A22;
   text-decoration: none;
   color: #FFE4B5;
 }
+
+.commonButton{
+  border: 2px solid orange !important;
+  padding: 20px 40px;
+  color: black;
+}
+
+.commonButton:hover{
+  background-color: darkgrey !important;
+  color: white;
+}
+
+.whiteBackGround{
+  background-color: white;
+}
+

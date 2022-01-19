@@ -8,9 +8,6 @@ import "react-multi-carousel/lib/styles.css";
 function HomeSpecialistsList() {
 
   const specialists = useSelector(state => state.specialists.specialists);
-  
-
-  console.log(specialists, 'spec');
 
   const responsive = {
     desktop: {

@@ -13,30 +13,31 @@ const login = async (req, res) => {
         phone,
       },
     });
-    // console.log(userByPhone);
+    
     if (!userByPhone) {
+      console.log(1111);
       return res.status(401).json({
         user: false,
-        message: 'Пользователя с таким телефоном не существует',
+        error: 'Пользователя с таким телефоном не существует',
       })
     }
-      // const isValidPassword = await bcrypt.compare(password, userByPhone.password);
-    // const isValidPassword = true; //TODO - remove after test
 
-    // if (!isValidPassword) {
-    //   return res.status(401)
-    //     .json({
-    //       user: false,
-    //       message: 'Пароль не верный',
-    //     })
-    // }
+    const isValidPassword = await bcrypt.compare(password, userByPhone.password);
+    
+    if (!isValidPassword) {
+      return res.status(401)
+        .json({
+          user: false,
+          error: 'Пароль не верный',
+        })
+    }
 
     req.session.user = {
       id: userByPhone.id,
       name: userByPhone.name,
       phone: userByPhone.phone,
       role: userByPhone.role,
-      isAuth:true,
+      isAuth: true,
     }
 
     res.json({

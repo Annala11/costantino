@@ -68,7 +68,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 function Navigation() {
 
   const user = useSelector(state => state.users.user);
-  const userIsAuth = !!user;
+  const userIsAuth = !!user.id;
   
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -138,6 +138,7 @@ function Navigation() {
               { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
               { text: 'АКЦИИ', link: '/stockprice' },
               { text: 'КОНТАКТЫ', link: '/contacts' },
+              { text: 'ПРОФИЛЬ', link: '/myprofile' },
               { text: 'ВЫЙТИ', link: '/logout' }
             ].map((el) => (
               <ListItem button key={el.text} onClick={handleDrawerClose}>
