@@ -17,6 +17,7 @@ import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
 import MyOrders from '../ProfileView/MyOrders/MyOrders';
 import Logout from '../ProfileView/Logout/Logout.jsx';
+import AdminPage from '../ProfileView/Admin/AdminPage/AdminPage';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="/stockprice" exact component={PagesStockPrice} />
               <Route path="/reviews" exact component={ReviewPage} />
               <Route path="/orders" exact component={MyOrders} />
+              <Route path="/admin" exact component={AdminPage} />
             </Switch>
           </div>
         </BrowserRouter>
