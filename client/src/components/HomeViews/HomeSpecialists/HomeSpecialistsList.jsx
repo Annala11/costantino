@@ -11,10 +11,14 @@ function HomeSpecialistsList() {
   const specialists = useSelector(state => state.specialists.specialists);
 
   return (
-
-    <div className='homePageSpecialistContainer'>
-      {specialists && specialists.map(specialist => <HomeSpecialistsCard key={specialist.id} specialist={specialist} />)}
-    </div>
+    <>
+      <h2 style={{ color: '#FFE4B5', text: 'bold' }}>
+        Наши специалисты
+      </h2>
+      <div className='homePageSpecialistContainer'>
+        {specialists && specialists.map(specialist => <HomeSpecialistsCard key={specialist.id} specialist={specialist} />)}
+      </div>
+    </>
   )
 }
 export default HomeSpecialistsList;
