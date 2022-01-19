@@ -11,7 +11,7 @@ export const usersReducer = (state = initialState, action) => {
       return { ...state, user: action.payload };
 
     case usersAT.INIT_ERROR_USER:
-      return { ...state, error: action.payload.error };
+      return { ...state, error: action.payload };
 
     case usersAT.USER_LOGOUT:
       return { ...state, user: false };

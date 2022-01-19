@@ -59,24 +59,11 @@ function ReviewForm() {
   const [open, setOpen] = useState(true);
   const [rating, setRating] = useState(5);
 
-  // const [messageModal, setMessageModal] = useState(false); for messager after write review
-
   const reviewText = useRef(null);
 
   const { user } = useSelector(state => state.users);
-  // console.log('in review form');
-  // console.log(user);
-
-  // TODO - remove after test
-  // const user = {
-  //   id: 4,
-  //   phone: 999,
-  //   name: 'anna'
-  // };
-  /////////////
 
   console.log('in review form');
-  console.log(user);
 
   const dispatch = useDispatch();
 

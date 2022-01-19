@@ -1,4 +1,5 @@
 export const ordersAT = {
   INIT_ORDERS: 'INIT_ORDERS',
+  SET_CALENDAR_ORDERS: 'SET_CALENDAR_ORDERS',
 };
 

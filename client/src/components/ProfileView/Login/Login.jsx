@@ -13,8 +13,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory } from 'react-router';
-import { useDispatch } from 'react-redux';
-import { userInitAC } from '../../../redux/ActionCreators/usersAC';
+import { useDispatch, useSelector } from 'react-redux';
+import { userErrorAC, userInitAC } from '../../../redux/ActionCreators/usersAC';
 
 
 
@@ -26,6 +26,7 @@ function Login() {
 
   const dispatch = useDispatch();
   let history = useHistory();
+  const error = useSelector(state=>state.users.error);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,10 +46,9 @@ function Login() {
       .then(res => res.json())
       .then(data => {
         if (!data.user) {
-          console.log(data.message);
-          // alert('This email adress already used!')
+          dispatch(userErrorAC(data.error));
         } else {
-          dispatch(userInitAC(data));
+          dispatch(userInitAC(data.user));
           history.push('/');
         }
       })
@@ -123,18 +123,17 @@ function Login() {
                 Войти
               </Button>
               <Grid container>
-                {/* <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid> */}
                 <Grid item>
                   <Link to="/registration" variant="body2">
                     {"Нет аккаунта? Зарегистрируйтесь."}
                   </Link>
                 </Grid>
               </Grid>
-              {/* <Copyright sx={{ mt: 5 }} /> */}
+              {error &&
+                <Grid className="authorizeError">
+                  {error}
+                </Grid>
+              }
             </Box>
           </Box>
         </Grid>
