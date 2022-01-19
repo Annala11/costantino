@@ -1,4 +1,5 @@
 export const ordersAT = {
   INIT_ORDERS: 'INIT_ORDERS',
+  INIT_ORDERS_FOR_ADMIN: 'INIT_ORDERS_FOR_ADMIN'
 };
 

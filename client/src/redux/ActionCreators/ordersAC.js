@@ -6,3 +6,10 @@ export const initOrdersAC = (payload) => {
     payload
   }
 }
+
+export const initOrdersForAdminAC = (payload) => {
+  return {
+    type: ordersAT.INIT_ORDERS_FOR_ADMIN,
+    payload
+  }
+}
