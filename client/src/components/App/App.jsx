@@ -18,6 +18,7 @@ import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
 import MyOrders from '../ProfileView/MyOrders/MyOrders';
 import Logout from '../ProfileView/Logout/Logout.jsx';
 import Footer from '../HomeViews/Footer/Footer';
+import SpecialistsList from '../PagesViews/PagesSpecialists/SpecialistsList';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
               <Route path="/stockprice" component={PagesStockPrice} />
               <Route path="/reviews" component={ReviewPage} />
               <Route path="/orders" component={MyOrders} />
+              <Route path="/spec" exact component={SpecialistsList} />
             </Switch>
           </div>
           <Footer />
