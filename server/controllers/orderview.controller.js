@@ -17,8 +17,22 @@ const getOrders = async (req, res) => {
     res.status(200).json({ orders });
   } catch (error) {
     res.status(404).json({ error: 'error' });
-    console.log(error);
+    // console.log(error);
   }
 };
 
-module.exports = { getOrders };
+const allOrders = async (req, res) => {
+  try {
+    const orders = await Order.findAll();
+
+    res.status(200).json(orders)
+  } catch (error) {
+    res.status(404).json({ error: 'error' });
+    console.log(error);
+  }
+}
+
+module.exports = {
+  getOrders,
+  allOrders
+};
