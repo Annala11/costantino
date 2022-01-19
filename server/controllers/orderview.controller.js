@@ -17,7 +17,7 @@ const getOrders = async (req, res) => {
     res.status(200).json({ orders });
   } catch (error) {
     res.status(404).json({ error: 'error' });
-    
+
   }
 };
 
@@ -27,12 +27,31 @@ const allOrders = async (req, res) => {
 
     res.status(200).json(orders)
   } catch (error) {
-    res.status(404).json({ error: 'error' });
-    
+    res.status(404).json({ message: error.message });
+
+  }
+}
+
+const changeStatus = async (req, res) => {
+  const { status, id } = req.body;
+  try {
+    const orders = await Order.update({
+      status: status
+    }, {
+      where: {
+        id: id
+      }
+    });
+
+    res.status(200).json(orders)
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+
   }
 }
 
 module.exports = {
   getOrders,
-  allOrders
+  allOrders,
+  changeStatus
 };
