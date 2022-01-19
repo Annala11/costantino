@@ -13,3 +13,12 @@ export const initOrdersForAdminAC = (payload) => {
     payload
   }
 }
+
+export const updateOrder = (payload) => {
+  return {
+    type: ordersAT.UPDATE_ORDER,
+    payload
+  }
+}
+
+
