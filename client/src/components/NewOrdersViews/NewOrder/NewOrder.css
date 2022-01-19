@@ -1,0 +1,10 @@
+.orderTopContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.orderTopContainer > div{
+  background-color: white;
+  width:45%;
+  text-align:center;
+  padding: 20px;
+}
