@@ -29,16 +29,17 @@ function App() {
 
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/home" exact component={Home} />
+              <Route path="/home"  component={Home} />
               <Route path="/registration" component={Registration} />
               <Route path="/login" component={Login} />
               <Route path="/profile" component={MyProfile} />
               <Route path="/logout" exact component={Logout} />
-              <Route path="/neworder" exact component={NewOrderСhoice} />
-              <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
-              <Route path="/stockprice" exact component={PagesStockPrice} />
-              <Route path="/reviews" exact component={ReviewPage} />
-              <Route path="/orders" exact component={MyOrders} />
+              <Route path="/neworder" component={NewOrderСhoice} />
+              <Route path="/servicesandprices" exact component={ServicesAndPricesList} />  
+              <Route path="/servicesandprices/:catid" component={ServicesAndPricesList} />
+              <Route path="/stockprice" component={PagesStockPrice} />
+              <Route path="/reviews" component={ReviewPage} />
+              <Route path="/orders" component={MyOrders} />
             </Switch>
           </div>
           <Footer />

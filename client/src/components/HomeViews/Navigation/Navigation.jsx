@@ -100,11 +100,11 @@ function Navigation() {
           </IconButton>
           <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1, marginLeft: '20px', fontSize: '25px' }}>
             <Link to='/' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link>
-            <img className="navLogo" src="logo.png"/>
+            <img className="navLogo" src="/logo.png"/>
           </Typography>
           <CallIcon></CallIcon>
           <Button color="inherit" size='small' style={{ fontSize: '15px' }}>
-            8-812-777-777-77
+            8-812-777-77-77
           </Button>
         </Toolbar>
       </AppBar>
@@ -133,6 +133,7 @@ function Navigation() {
         {userIsAuth ? // Условныей рендеринг, исходя из авторозации пользователя 
           <List className='navBlockMenu'>
             {[
+              { text: 'ГЛАВНАЯ', link: '/' },
               { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
               { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
               { text: 'АКЦИИ', link: '/stockprice' },
