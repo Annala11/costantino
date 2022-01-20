@@ -24,7 +24,7 @@ function HomeReviewsList() {
     <>
     <div className='line'></div>
       <h2 style={{ color: '#FFE4B5', text: 'bold' }}>
-        Последние отзывы наших клиентов
+        ПОСЛЕДНИЕ ОТЗЫВЫ НАШИХ КЛИЕНТОВ
       </h2>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', padding: '70px' }}>
         {topReviewsList && topReviewsList.map(review => <HomeReviewsCard key={review.id} review={review} />)}

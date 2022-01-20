@@ -1,12 +1,13 @@
 .homePageMapBlock{
   height: 500px;
+  padding-top: 30px;
   position: relative;
 }
 
 .homePageMapContacts{
   padding: 40px;
-  top: 20%;
-  left: 5%;
+  top:40%;
+  left: 0%;
   height: 60%;
   z-index: 1;
   background: rgba(0, 0, 0, 0.8);
@@ -33,3 +34,4 @@
     
   }
 }
+
