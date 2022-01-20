@@ -1,6 +1,7 @@
 .specialistPhoto img {
-  /* height: 230px !important ;
-  width: 200px; */
+  height: 250px ;
+  cursor: pointer;
+  /* width: 200px;  */
   /* text-align: center; */
   /* margin: auto !important; */
 }

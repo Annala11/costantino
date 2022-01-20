@@ -15,7 +15,7 @@ function Maps() {
     <>
       <div style={{ margin: '15px', marginTop:'40px'  }} className='line'></div>
       <h2 style={{ color: '#FFE4B5', text: 'bold' }}>
-        КАК С НАМИ СВЯЗАТЬСЯ 
+        КАК НАС НАЙТИ
       </h2>
       <div className="homePageMapBlock">
         <span className="homePageMapContacts">
