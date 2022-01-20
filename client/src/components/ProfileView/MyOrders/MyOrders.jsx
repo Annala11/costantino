@@ -4,11 +4,11 @@ import { initOrdersAC } from '../../../redux/ActionCreators/ordersAC';
 // import { initSpecialistsAC } from '../../../redux/ActionCreators/specialistsAC';
 import MyOrdersCars from './MyOrdersCars';
 
+
 function MyOrders() {
 
   // const specialists = useSelector(state => state.specialists.specialists);
   const orders = useSelector(state => state.orders.orders);
-  console.log(orders, 'orders');
   const userId = useSelector(state => state.users.user.id);
   // заказ авторизированного пользователя
   const orderUserId = orders.filter(order => order.user_id === userId);
@@ -35,7 +35,7 @@ function MyOrders() {
   }, [])
 
   return (
-    <div style={{ marginTop: "50px"}}>
+    <div  style={{ marginTop: "50px", borderRadius: '10px'}} >
       {orderUserId && orderUserId.map(order => <MyOrdersCars key={order.id} order={order} />)}
     </div>
   );
