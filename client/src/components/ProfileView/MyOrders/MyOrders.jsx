@@ -8,6 +8,7 @@ function MyOrders() {
 
   // const specialists = useSelector(state => state.specialists.specialists);
   const orders = useSelector(state => state.orders.orders);
+  console.log(orders, 'orders');
   const userId = useSelector(state => state.users.user.id);
   // заказ авторизированного пользователя
   const orderUserId = orders.filter(order => order.user_id === userId);
