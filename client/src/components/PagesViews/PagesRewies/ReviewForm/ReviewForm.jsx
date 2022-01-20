@@ -59,14 +59,14 @@ function ReviewForm() {
   const [open, setOpen] = useState(true);
   const [rating, setRating] = useState(5);
 
-  const reviewText = useRef(null);
+
+  // const [messageModal, setMessageModal] = useState(false); for messager after write review
 
   const { user } = useSelector(state => state.users);
 
-  console.log('in review form');
-
   const dispatch = useDispatch();
 
+  const reviewText = useRef(null);
   const titleText = useRef(null);
 
   const handleClose = () => {
@@ -84,8 +84,9 @@ function ReviewForm() {
       body: JSON.stringify({
         user_id: user.id,
         text: reviewText.current.value,
-        title: 3,// TODO - remove after test
+        title: titleText.current.value,
         rating: rating,
+        top_review: false,
         branch_id: 1 // TODO - remove after test
       })
     })
@@ -154,6 +155,7 @@ function ReviewForm() {
                 rows={4}
                 inputRef={reviewText}
               />
+
             </Box>
           </DialogContent>
 

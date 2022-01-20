@@ -16,6 +16,7 @@ import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
 import MyOrders from '../ProfileView/MyOrders/MyOrders';
 import Logout from '../ProfileView/Logout/Logout.jsx';
+import AdminPage from '../ProfileView/Admin/AdminPage/AdminPage';
 import Footer from '../HomeViews/Footer/Footer';
 import SpecialistsList from '../PagesViews/PagesSpecialists/SpecialistsList';
 import NewOrder from '../NewOrdersViews/NewOrder/NewOrder';
@@ -38,6 +39,7 @@ function App() {
               <Route path="/profile" component={MyProfile} />
               <Route path="/logout" exact component={Logout} />
               <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
+              <Route path="/admin" exact component={AdminPage} />
               <Route path="/servicesandprices/:catid" component={ServicesAndPricesList} />
               <Route path="/stockprice" component={PagesStockPrice} />
               <Route path="/reviews" component={ReviewPage} />
