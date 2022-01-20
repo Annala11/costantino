@@ -72,6 +72,9 @@ export default function MyCarousel() {
       <button className='caruselButton'>
       <Link className='caruselButtonLink' to='/neworder'> Записаться </Link>
       </button>
+      {/* <button className='caruselButton'>
+        Вы успешно записались!
+      </button> */}
     </div>
   );
 }

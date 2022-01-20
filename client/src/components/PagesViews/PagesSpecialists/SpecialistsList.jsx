@@ -37,6 +37,9 @@ function SpecialistsList({ specs }) {
   const handleSpec = () => {
     const queryParams = new URLSearchParams(window.location.search);
     const serviceid = queryParams.get("serviceid");
+    if(!serviceid || !specialistId){
+      return;
+    }
     let url = serviceid ?
       `/neworder?serviceid=${serviceid}&specid=${specialistId}` :
       `/neworder?specid=${specialistId}`;

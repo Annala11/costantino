@@ -1,6 +1,8 @@
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
-import './CalendarOrders.css'
+import 'react-notifications-component/dist/theme.css'
+import './CalendarOrders.css';
+import { store } from 'react-notifications-component';
 
 function CalendarOrders({ serviceid, specid, date }) {
   //const calendarorders = useSelector(state => state.orders.calendarorders);//надо использовать при отрисовке
@@ -31,21 +33,46 @@ function CalendarOrders({ serviceid, specid, date }) {
         date,
       })
     })
+      .then(res => res.json())
+      .then((data) => {
+        store.addNotification({
+          title: "Поздравляем!",
+          message: "Запись на услугу успешно осуществлена!",
+          type: "success",
+          insert: "top",
+          container: "top-right",
+          animationIn: ["animate__animated", "animate__fadeIn"],
+          animationOut: ["animate__animated", "animate__fadeOut"],
+          dismiss: {
+            duration: 5000,
+            onScreen: true
+          }
+        });
+        console.log(data);
+      })
   }
+
+
+
   return (
-    <>
-      <div className="calendarInts">
-        {
-          intervals.length &&
-          intervals.map((int) => <span className={'calendarInterval' + (+chosenInterval === int ? ' chosenInterval' : '')} key={int} data-intervalid={int} onClick={setOrderInterval}>{buildTime(int)}</span>)
-        }
+    <div>
+      <div style={{ position: 'relative' }}>
+        <div className="calendarInts">
+          {
+            intervals.length &&
+            intervals.map((int) => <span className={'calendarInterval' + (+chosenInterval === int ? ' chosenInterval' : '')} key={int} data-intervalid={int} onClick={setOrderInterval}>{buildTime(int)}</span>)
+          }
+        </div>
+        <div className="calendarButtonContainer">
+          {chosenInterval &&
+            <Button className="commonButton" onClick={handleOrder}>Записаться</Button>
+          }
+        </div>
       </div>
-      <div className="calendarButtonContainer">
-        {chosenInterval &&
-          <Button className="commonButton" onClick={handleOrder}>Записаться</Button>
-        }
+      <div style={{ padding: "50px", display: "none" }}>
+        Запись на услугу осуществлена
       </div>
-    </>
+    </div>
   )
 }
 

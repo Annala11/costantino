@@ -1,7 +1,8 @@
 import React from 'react';
-
+import ReactNotification from 'react-notifications-component';1
 import { Provider } from 'react-redux';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
+
 
 import store from '../../redux/store';
 import './App.css';
@@ -21,10 +22,13 @@ import SpecialistsList from '../PagesViews/PagesSpecialists/SpecialistsList';
 import NewOrder from '../NewOrdersViews/NewOrder/NewOrder';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
+
+
 function App() {
   return (
     <Provider store={store}>
       <LoginAndInitWrapper>
+      <ReactNotification />
         <BrowserRouter>
           <ScrollToTop />
           <Navigation />
