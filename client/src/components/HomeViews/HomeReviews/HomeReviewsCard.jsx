@@ -1,25 +1,22 @@
 
-import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
+// import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import React from 'react';
+import './HomeReviewsCard.css'
 
-function HomeReviewsCard({review}) {
+function HomeReviewsCard({ review }) {
+
   return (
-
-
-    <Card sx={{ maxWidth: 345 }}>
-    <CardActionArea>
-      <CardContent>
-        <Typography variant="h5" component="div">
-          Заголовок: {review.title}
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Содержание:{review.text}
-        </Typography>
-      </CardContent>
-    </CardActionArea>
-  </Card>
-
+<div className="container">
+  <div className="card">
+    <div className="box">
+      <div className="content">
+        <h3>{review.title}</h3>
+        <p>{review.text}</p>
+        <a href="/reviews">Смотреть больше отзывов</a>
+      </div>
+    </div>
+  </div>
+</div>
   );
 }
-
 export default HomeReviewsCard;

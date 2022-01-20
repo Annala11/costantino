@@ -22,3 +22,9 @@ export const updateOrder = (payload) => {
 }
 
 
+export const setCalendarOrdersAC = (payload) => {
+  return {
+    type: ordersAT.SET_CALENDAR_ORDERS,
+    payload
+  }
+}

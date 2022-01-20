@@ -19,7 +19,7 @@ import ListItem from '@mui/material/ListItem';
 
 import './Navigation.css'
 
-const drawerWidth = 360;//Math.min(window.innerWidth, 400);
+const drawerWidth = Math.min(window.innerWidth, 600);
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -68,7 +68,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 function Navigation() {
 
   const user = useSelector(state => state.users.user);
-  const userIsAuth = !!user;
+  const userIsAuth = !!user.id;
   
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -99,12 +99,12 @@ function Navigation() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1, marginLeft: '20px', fontSize: '25px' }}>
-            <Link to='/home' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link>
-            <img style={{width:'30px', height:'30px', filter: 'invert(1)'}} src="logo.png"/>
+            <Link to='/' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link>
+            <img className="navLogo" src="/logo.png"/>
           </Typography>
           <CallIcon></CallIcon>
           <Button color="inherit" size='small' style={{ fontSize: '15px' }}>
-            8-812-777-777-77
+            8-812-777-77-77
           </Button>
         </Toolbar>
       </AppBar>
@@ -123,7 +123,7 @@ function Navigation() {
         open={open}>
         <DrawerHeader className='navBlockMenu'>
           <Typography variant="h6" noWrap component="div" >
-            <Link to='/home' style={{ flexGrow: 1, textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link>
+            {/* <Link to='/' style={{ flexGrow: 1, textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link> */}
           </Typography>
           <IconButton style={{color:'#FFE4B5'}}onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
@@ -133,13 +133,15 @@ function Navigation() {
         {userIsAuth ? // Условныей рендеринг, исходя из авторозации пользователя 
           <List className='navBlockMenu'>
             {[
+              { text: 'ГЛАВНАЯ', link: '/' },
               { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
               { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
               { text: 'АКЦИИ', link: '/stockprice' },
               { text: 'КОНТАКТЫ', link: '/contacts' },
+              { text: 'ПРОФИЛЬ', link: '/myprofile' },
               { text: 'ВЫЙТИ', link: '/logout' }
             ].map((el) => (
-              <ListItem button key={el.text}>
+              <ListItem button key={el.text} onClick={handleDrawerClose}>
                 <Link to={el.link}> {el.text} </Link>
               </ListItem>
             ))}

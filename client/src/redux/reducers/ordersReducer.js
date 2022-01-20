@@ -2,7 +2,8 @@ import { ordersAT } from "../ActionTypes/ordersAT";
 
 const initialState = {
   orders: [],
-  allOrdersForAdmin: []
+  allOrdersForAdmin: [],
+  calendarorders : []
 };
 
 export const ordersReducer = (state = initialState, action) => {
@@ -36,6 +37,12 @@ export const ordersReducer = (state = initialState, action) => {
           }
         })
       }
+    case ordersAT.SET_CALENDAR_ORDERS:
+      return {
+        ...state,
+        calendarorders: action.payload
+      }
+
     default:
       return state;
   }

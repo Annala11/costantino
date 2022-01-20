@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 function HomeServicesAndPricesCard({categoryParent}) {
   return (
-    <Card sx={{ maxWidth: 345,}}>
+    <Card sx={{ maxWidth: 345}}>
       {/* <CardMedia
         component="img"
         height="140"
@@ -21,27 +21,25 @@ function HomeServicesAndPricesCard({categoryParent}) {
         <Typography gutterBottom variant="h5" component="div">
         {categoryParent.name}
         </Typography>
-        {categoryParent.name === 'Женский зал' && 
+        {categoryParent.id === 1 && 
         <Typography variant="body2" color="text.secondary">
           {categoryParent.discription ? categoryParent.discription : 'Лучшие специалисты нашего салона, помогут подчеркнуть твою индивидуальность и красоту!'}
         </Typography>}
-        {categoryParent.name === 'Мужской зал' && 
+        {categoryParent.id === 2 && 
         <Typography variant="body2" color="text.secondary">
           {categoryParent.discription ? categoryParent.discription : 'Твоя брутальность и стиль - именно в этом мы разбираемся лучше всего! Ты не останешься без женского внимания.'}
         </Typography>}
-        {categoryParent.name === 'Детский зал' && 
+        {categoryParent.id === 3 && 
         <Typography variant="body2" color="text.secondary">
           {categoryParent.discription ? categoryParent.discription : 'Повседневные стрижки и подготовка Вашего ребенка к детским, но все же - серьезным мероприятием, мы с радостью и весельем поможем Вам!'}
         </Typography>}
-
-
       </CardContent>
       <CardActions>
         <Button size="small">
         <Link to ='/neworder' > ЗАПИСАТЬСЯ </Link>
         </Button>
         <Button size="small">
-        <Link to ='/servicesandprices' > ПОДРОБНЕЕ </Link>
+        <Link to ={`/servicesandprices/${categoryParent.id}`} > ПОДРОБНЕЕ </Link>
         </Button>
       </CardActions>
     </Card>

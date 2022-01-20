@@ -1,30 +1,34 @@
 import React, { useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-// import { initReviewsAC } from '../../../redux/ActionCreators/reviewsAC';
-
+import { initTopReviewsAC } from '../../../redux/ActionCreators/reviewsAC';
 
 import HomeReviewsCard from './HomeReviewsCard';
 
-// const dispatch = useDispatch();
-
 function HomeReviewsList() {
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch('/reviews/bestreviews')
-    .then(res => res.json())
-    .then(console.log())
-    // .then(data => dispatch(initReviewsAC(data.reviews)))
-  }, [])
+      .then(res => res.json())
+      .then(data => dispatch(initTopReviewsAC(data)))
+  }, [dispatch])
 
-  const reviewsList = useSelector(state => state.reviews.reviews);
+
+  const topReviewsList = useSelector(state => state.reviews.topReviews);
 
   return (
-    <div style={{display:'flex', flexWrap:'wrap', justifyContent:'space-around', padding:'70px'}}>
-      {reviewsList && reviewsList.map(review => <HomeReviewsCard key={ review.id}  review={ review } />)}
-    </div>
+    <>
+      <h2 style={{ color: '#FFE4B5', text: 'bold' }}>
+        Последние отзывы наших клиентов
+      </h2>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', padding: '70px' }}>
+        {topReviewsList && topReviewsList.map(review => <HomeReviewsCard key={review.id} review={review} />)}
+      </div>
+    </>
   );
 }
 export default HomeReviewsList;

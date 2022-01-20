@@ -1,27 +1,43 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-// import { useDispatch } from 'react-redux';
+
+import HomeSpecialistsCard from './HomeSpecialistsCard';
+
+import './HomeSpecialistsList.css'
 
 function HomeSpecialistsList() {
 
-  // const dispatch = useDispatch();
+  const specialists = useSelector(state => state.specialists.specialists);
 
-  const specialists  = useSelector(state => state.reviews);
-  console.log(specialists);
-
-  useEffect(() => {
-    fetch('/getSpecialists')
-    .then(res => res.json())
-    .then(data => data.specialists)
-  })
+//   const responsive = {
+//     desktop: {
+//       breakpoint: { max: 3000, min: 1024 },
+//       items: 3,
+//       slidesToSlide: 3 
+//     },
+//     tablet: {
+//       breakpoint: { max: 1024, min: 464 },
+//       items: 2,
+//       slidesToSlide: 2 
+//     },
+//     mobile: {
+//       breakpoint: { max: 464, min: 0 },
+//       items: 1,
+//       slidesToSlide: 1 
+//     }
+//   };
 
 
   return (
-    <div>
-      
-    </div>
-  );
+    <>
+      <h2 style={{ color: '#FFE4B5', text: 'bold' }}>
+        Наши специалисты
+      </h2>
+      <div className='homePageSpecialistContainer'>
+        {specialists && specialists.map(specialist => <HomeSpecialistsCard key={specialist.id} specialist={specialist} />)}
+      </div>
+    </>
+  )
 }
-
 export default HomeSpecialistsList;

@@ -1,0 +1,26 @@
+.orderTopContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.orderTopContainer > div{
+  background-color: white;
+  width:45%;
+  text-align:center;
+  padding: 20px;
+}
+
+.orderCalendarContainer{
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.calendarOrdersContainer{
+  background-color: white;
+}
+
+.authorizeFirst{
+  padding: 40px;
+  
+}

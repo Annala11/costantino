@@ -1,0 +1,25 @@
+.calendarInts{
+  background-color: white;
+  max-width: 800px;
+  min-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.calendarInterval{
+  padding: 20px 40px;
+  background-color:coral;
+}
+.calendarInterval.chosenInterval{
+  background-color: darkkhaki;
+}
+.calendarInterval:not(.chosenInterval):hover{
+  background-color: darkgoldenrod;
+  cursor: pointer;
+}
+
+.calendarButtonContainer{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
