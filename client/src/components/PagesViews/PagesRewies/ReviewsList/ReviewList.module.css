@@ -3,10 +3,10 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: rgba(89, 102, 114, 0.356);
-  margin-top: 30px;
+  margin-top: 10px;
   padding-top: 10px;
   padding-left: 10px;
+  padding-bottom: 120px;
   position: relative;
   width: auto;
   

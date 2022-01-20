@@ -21,21 +21,21 @@ function HomeServicesAndPricesCard({ categoryParent }) {
         <img className='homeServicesImg' src="/categoryFoto/womensCategory.jpg" alt=""></img>
       }
       {categoryParent.id === 1 &&
-        <p style={{color:'#778899', margin:'15px'}}>{categoryParent.discription ? categoryParent.discription : 'Лучшие специалисты нашего салона, помогут подчеркнуть твою индивидуальность и красоту!'}</p>
+        <p style={{color:'#5F9EA0', margin:'15px', textShadow: '2px 2px 5px #4682B4', }}>{categoryParent.discription ? categoryParent.discription : 'ЛУЧШИЕ МАСТЕРА НАШЕГО САЛОНА ПОМОГУТ ПОДЧЕРКНУТЬ ТВОЮ ИНДИВИДУАЛЬНОСТЬ И КРАСОТУ'}</p>
       }
 
       {categoryParent.id === 2 &&
         <img className='homeServicesImg' src="/categoryFoto/mensCategory.jpg" alt=""></img>
       }
       {categoryParent.id === 2 &&
-        <p style={{color:'#778899', margin:'15px'}} >{categoryParent.discription ? categoryParent.discription : 'Твоя брутальность и стиль - именно в этом мы разбираемся лучше всего! Ты не останешься без женского внимания.'}</p>
+        <p style={{color:'#5F9EA0', margin:'15px', textShadow: '2px 2px 5px #4682B4'}} >{categoryParent.discription ? categoryParent.discription : 'ТВОЯ БРУТАЛЬНОСТЬ И СТИЛЬ - ИМЕННО В ЭТОМ МЫ РАЗБИРАЕМСЯ ЛУЧШЕ ВСЕГО! ТЫ НЕ ОСТАНЕШЬСЯ БЕЗ ЖЕНСКОГО ВНИМАНИЯ'}</p>
       }
 
       {categoryParent.id === 3 &&
         <img className='homeServicesImg' src="/categoryFoto/childCategory.jpg" alt=""></img>
       }
       {categoryParent.id === 3 &&
-        <p style={{color:'#778899', margin:'15px'}} >{categoryParent.discription ? categoryParent.discription : 'Повседневные стрижки и подготовка Вашего ребенка к детским, но все же - серьезным мероприятием, мы с радостью и весельем поможем Вам!'}</p>
+        <p style={{color:'#5F9EA0', margin:'15px', textShadow: '2px 2px 5px #4682B4'}} >{categoryParent.discription ? categoryParent.discription : 'ПОВСЕКИ И ПОДГОТОВКА ВАШЕГО РЕБЕНКА К ДЕТСКИМ, НО ВСЕ ЖЕ - СЕРЬЕЗНЫМ МЕРОПРИЯТИЯМ, МЫ С РАДОСТЬЮ И ВЕСЕЛЬЕМ ПОМОЖЕМ ВАМ'}</p>
       }
     </div>
 
