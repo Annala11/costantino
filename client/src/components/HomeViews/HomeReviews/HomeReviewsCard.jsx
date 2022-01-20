@@ -7,7 +7,7 @@ function HomeReviewsCard({ review }) {
 
   return (
     //можно вставить в карточку дату создания отзыва, и имя клиента
-    <div className="container">
+    <div className="homeReviewContainer">
       <div className="card">
         <div className="box">
           <div className="content">

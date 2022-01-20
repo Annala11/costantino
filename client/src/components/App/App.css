@@ -6,8 +6,8 @@
 
 #root{
 min-height: 100vh;
-background: #010B13;
 color: #000000;
+background: #010B13;
 background: linear-gradient(to bottom, #010B13 0%, #000004 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #010B13), color-stop(100%, #000004));
 background: -webkit-linear-gradient(top, #010B13 0%, #000004 100%);

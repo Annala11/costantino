@@ -1,5 +1,5 @@
 import React from 'react';
-// import styles from './ReviewBlock.module.css';
+import  './ReviewBlock.css';
 
 
 // import Card from '@mui/material/Card';
@@ -13,7 +13,7 @@ function ReviewBlock({ review }) {
   return (
     <>
 
-<div className="container">
+<div className="reviewListContainer">
       <div className="card">
         <div className="box">
           <div className="content">
