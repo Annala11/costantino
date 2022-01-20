@@ -22,6 +22,7 @@ function HomeReviewsList() {
 
   return (
     <>
+    <div className='line'></div>
       <h2 style={{ color: '#FFE4B5', text: 'bold' }}>
         Последние отзывы наших клиентов
       </h2>

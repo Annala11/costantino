@@ -10,7 +10,7 @@ function HomeSpecialistsCard({ specialist }) {
   return (
     <div style={{ textAlign: 'center' }}>
       <ImageShadow style={{ margin: '15px' }} src={specialist.photo} />
-      <h3 style={{ color: '#FFE4B5' }}>{specialist.name}</h3>
+      <h3 style={{ color: '#778899' }}>{specialist.name}</h3>
     </div>
   );
 }
