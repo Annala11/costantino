@@ -4,12 +4,22 @@ import { useSelector } from 'react-redux';
 import { initOrdersForAdminAC } from '../../../../redux/ActionCreators/ordersAC';
 import OrderItemAdmin from '../OrderItemAdmin/OrderItemAdmin';
 import './AdminPage.css';
+import { userInitAC } from '../../../../redux/ActionCreators/usersAC';
+
+import { useHistory } from 'react-router-dom';
 
 import { TableRow } from '@material-ui/core';
 import { TableCell } from '@material-ui/core';
 
+// import uuid4 from "uuid4";
+
 
 function AdminPage() {
+  const { user } = useSelector(state => state.users)
+
+  console.log(user);
+  const history = useHistory();
+  // const id = uuid4();
 
   const { allOrdersForAdmin } = useSelector(state => state.orders);
 
@@ -29,6 +39,30 @@ function AdminPage() {
         }
       })
   }, [])
+
+  const redir = () => {
+    history.push('/');
+  }
+
+  useEffect(() => {
+    fetch('/isauth', {
+      method: 'GET',
+      credentials: 'include',
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.user) {
+          dispatch(userInitAC(data.user));
+        }
+        console.log(data.user);
+        if (data.user?.role !== 'admin') {
+          redir();
+        }
+
+      })
+  }, []);
+
+
 
   return (
     <>
