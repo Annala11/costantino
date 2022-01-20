@@ -4,6 +4,7 @@ import { initOrdersAC } from '../../../redux/ActionCreators/ordersAC';
 // import { initSpecialistsAC } from '../../../redux/ActionCreators/specialistsAC';
 import MyOrdersCars from './MyOrdersCars';
 
+
 function MyOrders() {
 
   // const specialists = useSelector(state => state.specialists.specialists);
@@ -34,7 +35,7 @@ function MyOrders() {
   }, [])
 
   return (
-    <div style={{ marginTop: "50px"}}>
+    <div  style={{ marginTop: "50px", borderRadius: '10px'}} >
       {orderUserId && orderUserId.map(order => <MyOrdersCars key={order.id} order={order} />)}
     </div>
   );

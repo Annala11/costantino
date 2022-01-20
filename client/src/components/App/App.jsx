@@ -14,7 +14,6 @@ import PagesStockPrice from '../PagesViews/PagesStockPrice/PagesStockPrice'
 import ServicesAndPricesList from '../PagesViews/PagesServicesAndPrices/ServicesAndPricesList';
 import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
-import MyOrders from '../ProfileView/MyOrders/MyOrders';
 import Logout from '../ProfileView/Logout/Logout.jsx';
 import AdminPage from '../ProfileView/Admin/AdminPage/AdminPage';
 import Footer from '../HomeViews/Footer/Footer';
@@ -36,14 +35,13 @@ function App() {
               <Route path="/home" component={Home} />
               <Route path="/registration" component={Registration} />
               <Route path="/login" component={Login} />
-              <Route path="/profile" component={MyProfile} />
+              <Route path="/myprofile" component={MyProfile} />
               <Route path="/logout" exact component={Logout} />
               <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
               <Route path="/admin" exact component={AdminPage} />
               <Route path="/servicesandprices/:catid" component={ServicesAndPricesList} />
               <Route path="/stockprice" component={PagesStockPrice} />
               <Route path="/reviews" component={ReviewPage} />
-              <Route path="/orders" component={MyOrders} />
               <Route path="/neworder" component={NewOrder} />
               <Route path="/spec" exact component={SpecialistsList} />
             </Switch>
