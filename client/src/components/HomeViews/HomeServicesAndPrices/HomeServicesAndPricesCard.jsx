@@ -18,21 +18,21 @@ function HomeServicesAndPricesCard({ categoryParent }) {
       <h3 style={{color:'#FFE4B5'}}>{categoryParent.name}</h3>
 
       {categoryParent.id === 1 &&
-        <img className='homeServicesImg' src="https://images.unsplash.com/photo-1569390173732-5c735072c80f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""></img>
+        <img className='homeServicesImg' src="/categoryFoto/womensCategory.jpg" alt=""></img>
       }
       {categoryParent.id === 1 &&
         <p style={{color:'#778899', margin:'15px'}}>{categoryParent.discription ? categoryParent.discription : 'Лучшие специалисты нашего салона, помогут подчеркнуть твою индивидуальность и красоту!'}</p>
       }
 
       {categoryParent.id === 2 &&
-        <img className='homeServicesImg' src="https://images.unsplash.com/photo-1569390173732-5c735072c80f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""></img>
+        <img className='homeServicesImg' src="/categoryFoto/mensCategory.jpg" alt=""></img>
       }
       {categoryParent.id === 2 &&
         <p style={{color:'#778899', margin:'15px'}} >{categoryParent.discription ? categoryParent.discription : 'Твоя брутальность и стиль - именно в этом мы разбираемся лучше всего! Ты не останешься без женского внимания.'}</p>
       }
 
       {categoryParent.id === 3 &&
-        <img className='homeServicesImg' src="https://images.unsplash.com/photo-1569390173732-5c735072c80f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""></img>
+        <img className='homeServicesImg' src="/categoryFoto/childCategory.jpg" alt=""></img>
       }
       {categoryParent.id === 3 &&
         <p style={{color:'#778899', margin:'15px'}} >{categoryParent.discription ? categoryParent.discription : 'Повседневные стрижки и подготовка Вашего ребенка к детским, но все же - серьезным мероприятием, мы с радостью и весельем поможем Вам!'}</p>
