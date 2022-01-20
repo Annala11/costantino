@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import './Login.css'
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
 import { Link } from 'react-router-dom';
@@ -26,7 +27,7 @@ function Login() {
 
   const dispatch = useDispatch();
   let history = useHistory();
-  const error = useSelector(state=>state.users.error);
+  const error = useSelector(state => state.users.error);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,6 +54,23 @@ function Login() {
         }
       })
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      dispatch(userErrorAC(''))
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [error])
+
+  useEffect(() => {
+    return () => {
+      dispatch(userErrorAC(''))
+    }
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -131,7 +149,9 @@ function Login() {
               </Grid>
               {error &&
                 <Grid className="authorizeError">
-                  {error}
+                  {
+                    error
+                  }
                 </Grid>
               }
             </Box>

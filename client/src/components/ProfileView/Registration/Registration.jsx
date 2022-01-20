@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -51,6 +51,22 @@ function Registration() {
         }
       })
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      dispatch(userErrorAC(''))
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [error])
+
+  useEffect(() => {
+    return () => {
+      dispatch(userErrorAC(''))
+    }
+  }, [])
 
   return (
     <ThemeProvider theme={theme}>

@@ -19,7 +19,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
     },{
-      name: 'Вампилова светлана',
+      name: 'Вампилова Светлана',
       description: 'Парикмахер',
       photo: '/specialists/spec3.jpg',
       branch_id: 1,
@@ -47,21 +47,21 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
     },{
-      name: 'Нежевенко Ольга',
+      name: 'Илья Коновалов',
       description: 'Парикмахер',
       photo: '/specialists/spec7.jpg',
       branch_id: 1,
       createdAt: new Date(),
       updatedAt: new Date(),
     },{
-      name: 'Печуро Людмила',
+      name: 'Артем Денисов',
       description: 'Парикмахер',
       photo: '/specialists/spec8.jpg',
       branch_id: 1,
       createdAt: new Date(),
       updatedAt: new Date(),
     },{
-      name: 'Ушакова Анна',
+      name: 'Александр Денисов',
       description: 'Парикмахер',
       photo: '/specialists/spec9.jpg',
       branch_id: 1,
