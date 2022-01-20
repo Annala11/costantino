@@ -12,7 +12,7 @@ function MenServicesCard({ men, categoryParentId2 }) {
   }
 
   function handleRowClick(event){
-    history.push(`neworder?serviceid=${event.target.parentElement.dataset.serviceid}`);
+    history.push(`/neworder?serviceid=${event.target.parentElement.dataset.serviceid}`);
   }
 
   return (
