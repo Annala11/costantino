@@ -4,13 +4,20 @@
   color:rgba(207, 207, 200, 0.781)
 }
 .box {
-  background-color: rgba(255, 255, 255, 0.979);
+  background-color: rgba(248, 244, 244, 0.979);
   margin-top: 20px;
+width: 100%;
 }
 .head-row {
   background-color: rgb(46, 51, 51);
+  width: 100%;
   
 }
 .cell {
   color: aliceblue;
 }
+
+.filter-btn {
+  color: rgb(243, 236, 236);
+}
+
