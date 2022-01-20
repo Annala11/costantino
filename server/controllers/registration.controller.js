@@ -6,6 +6,13 @@ const registerUser = async (req, res) => {
     const { phone, password, name } = req.body;
     console.log({ phone, password, name });
 
+    if(!password || password.length < 6){
+      return res.status(401).json({
+        user: false,
+        error: 'Введите 6 или более символов в пароле',
+      });
+    }
+
     const userWithSamePhone = await User.findOne({
       where: {
         phone,
@@ -13,10 +20,9 @@ const registerUser = async (req, res) => {
       },
     });
     if (userWithSamePhone) {
-      // console.log('same phone');
       res.status(401).json({
         user: false,
-        message: 'Пользователь с таким номером телефона уже существует',
+        error: 'Пользователь с таким номером телефона уже существует',
       });
     } else {
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -44,7 +50,7 @@ const registerUser = async (req, res) => {
 
 
   } catch (error) {
-    // console.log(error.message);
+    console.log(error.message);
     res.status(401)
       .json({
         message: error.message

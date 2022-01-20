@@ -9,7 +9,7 @@ module.exports = {
       },
       title: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       text: {
         allowNull: false,
@@ -18,6 +18,10 @@ module.exports = {
       rating: {
         allowNull: false,
         type: Sequelize.INTEGER
+      },
+      top_review: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
       },
       branch_id: {
         allowNull: false,

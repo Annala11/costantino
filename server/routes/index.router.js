@@ -13,6 +13,8 @@ const scheduleRouter = require('./schedule.router');
 const isAuthRouter = require('./isAuth.router');
 const stockpriceRouter = require('./stockprice.router');
 const branchesRouter = require('./branches.router');
+const initdataRouter = require('./initdata.router');
+const ordersRouter = require('./orders.router');
 
 router.use('/login', loginRouter);
 router.use('/logout', logoutRouter);
@@ -28,7 +30,8 @@ router.use('/schedule', scheduleRouter);
 router.use('/isAuth', isAuthRouter);
 router.use('/stockprice', stockpriceRouter);
 router.use('/branches', branchesRouter);
-
+router.use('/initdata', initdataRouter);
+router.use('/orders', ordersRouter);
 
 
 module.exports = router;

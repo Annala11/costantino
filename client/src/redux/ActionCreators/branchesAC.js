@@ -1,6 +1,6 @@
 import { branchesAT } from "../ActionTypes/branchesAT";
 
-export const branchesInitAC = (payload) => {
+export const initBranchesAC = (payload) => {
   return {
     type: branchesAT.INIT_BRANCHES,
     payload

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Review, Order, Branch, Specialist }) {
       User.belongsToMany(Branch, { through: Review, foreignKey: 'user_id', otherKey: 'branch_id' });
       User.belongsToMany(Specialist, { through: Order, foreignKey: 'user_id', otherKey: 'specialist_id' });
+      User.hasMany(Order, { foreignKey:'user_id'});
     }
   }
   User.init({

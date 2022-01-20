@@ -25,6 +25,13 @@ module.exports = {
       role: 'admin',
       createdAt: new Date(),
       updatedAt: new Date(),
+    },{
+      phone: 999,
+      password: '123',
+      name: 'anna',
+      role: 'user',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
   ], {});
 

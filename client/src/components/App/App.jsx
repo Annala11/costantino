@@ -10,35 +10,45 @@ import Home from '../HomeViews/Home/Home';
 import Registration from '../ProfileView/Registration/Registration';
 import Login from '../ProfileView/Login/Login';
 import MyProfile from '../ProfileView/MyProfile/MyProfile';
-import NewOrderСhoice from '../../components/NewOrdersViews/NewOrderСhoice/NewOrderСhoice';
 import PagesStockPrice from '../PagesViews/PagesStockPrice/PagesStockPrice'
 import ServicesAndPricesList from '../PagesViews/PagesServicesAndPrices/ServicesAndPricesList';
 import ReviewPage from '../PagesViews/PagesRewies/ReviewPage/ReviewPage';
 import LoginAndInitWrapper from '../LoginAndInitWrapper/LoginAndInitWrapper';
 import MyOrders from '../ProfileView/MyOrders/MyOrders';
 import Logout from '../ProfileView/Logout/Logout.jsx';
+import AdminPage from '../ProfileView/Admin/AdminPage/AdminPage';
+import Footer from '../HomeViews/Footer/Footer';
+import SpecialistsList from '../PagesViews/PagesSpecialists/SpecialistsList';
+import NewOrder from '../NewOrdersViews/NewOrder/NewOrder';
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <Provider store={store}>
       <LoginAndInitWrapper>
         <BrowserRouter>
+          <ScrollToTop />
           <Navigation />
           <div className="mainContainer">
+
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/home" exact component={Home} />
+              <Route path="/home" component={Home} />
               <Route path="/registration" component={Registration} />
               <Route path="/login" component={Login} />
               <Route path="/profile" component={MyProfile} />
               <Route path="/logout" exact component={Logout} />
-              <Route path="/neworder" exact component={NewOrderСhoice} />
               <Route path="/servicesandprices" exact component={ServicesAndPricesList} />
-              <Route path="/stockprice" exact component={PagesStockPrice} />
-              <Route path="/reviews" exact component={ReviewPage} />
-              <Route path="/orders" exact component={MyOrders} />
+              <Route path="/admin" exact component={AdminPage} />
+              <Route path="/servicesandprices/:catid" component={ServicesAndPricesList} />
+              <Route path="/stockprice" component={PagesStockPrice} />
+              <Route path="/reviews" component={ReviewPage} />
+              <Route path="/orders" component={MyOrders} />
+              <Route path="/neworder" component={NewOrder} />
+              <Route path="/spec" exact component={SpecialistsList} />
             </Switch>
           </div>
+          <Footer />
         </BrowserRouter>
       </LoginAndInitWrapper>
     </Provider>

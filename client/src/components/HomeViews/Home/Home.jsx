@@ -2,17 +2,18 @@ import React from 'react';
 import HomeBilboard from '../HomeBilboard/HomeBilboard';
 import HomeServicesAndPricesList from '../HomeServicesAndPrices/HomeServicesAndPricesList';
 import Maps from '../Maps/Maps';
-import HomeReviews from '../HomeReviews/HomeReviews';
-import Footer from '../Footer/Footer'
+import HomeReviewsList from '../HomeReviews/HomeReviewsList';
+import HomeSpecialistsList from '../HomeSpecialists/HomeSpecialistsList';
+
 
 function Home() {
   return (
     <>
       <HomeBilboard />
       <HomeServicesAndPricesList />
+      <HomeSpecialistsList />
+      <HomeReviewsList />
       <Maps />
-      <HomeReviews />
-      <Footer />
     </>
   );
 }

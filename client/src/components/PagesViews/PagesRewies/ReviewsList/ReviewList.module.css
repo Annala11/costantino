@@ -1,0 +1,21 @@
+.containerReview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: rgba(89, 102, 114, 0.356);
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-left: 10px;
+  position: relative;
+  width: auto;
+  
+}
+
+.buttonContainer {
+margin: 10px;
+margin-right: 50px;
+display: flex;
+justify-content: right;
+
+}

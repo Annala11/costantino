@@ -15,6 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Rating from '@mui/material/Rating';
+// import ReviewMessageModal from '../ReviewMessageModal/ReviewMessageModal';
 
 // import Typography from '@mui/material/Typography';
 
@@ -58,12 +59,14 @@ function ReviewForm() {
   const [open, setOpen] = useState(true);
   const [rating, setRating] = useState(5);
 
-  const reviewText = useRef(null);
+
+  // const [messageModal, setMessageModal] = useState(false); for messager after write review
 
   const { user } = useSelector(state => state.users);
 
   const dispatch = useDispatch();
 
+  const reviewText = useRef(null);
   const titleText = useRef(null);
 
   const handleClose = () => {
@@ -81,8 +84,9 @@ function ReviewForm() {
       body: JSON.stringify({
         user_id: user.id,
         text: reviewText.current.value,
-        title: 3,// TODO - remove after test
+        title: titleText.current.value,
         rating: rating,
+        top_review: false,
         branch_id: 1 // TODO - remove after test
       })
     })
@@ -96,8 +100,10 @@ function ReviewForm() {
       })
 
     handleClose();
+    // setMessageModal(true);
+
   };
-  //useSelector(currentBranch)
+  // TODO - select branch useSelector(currentBranch)
   return (
     <>
 
@@ -149,6 +155,7 @@ function ReviewForm() {
                 rows={4}
                 inputRef={reviewText}
               />
+
             </Box>
           </DialogContent>
 
@@ -159,6 +166,7 @@ function ReviewForm() {
           </DialogActions>
         </BootstrapDialog>
       </div>
+      {/* {messageModal && <ReviewMessageModal open={!messageModal} onClose={setMessageModal} />} */}
     </>
   );
 }

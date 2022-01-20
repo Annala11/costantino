@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import KidServicesCard from './KidServicesCard';
@@ -13,20 +13,32 @@ function KidServices({ categoryParentId3, servicesKid }) {
 
   return (
     <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1bh-content"
-        id="panel1bh-header"
-      >
-        <Typography sx={{ width: '33%', flexShrink: 0 }}>{categoryParentId3?.name}</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          {
+    <AccordionSummary
+      sx={{ width: '100%' }}
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1bh-content"
+      id="panel1bh-header"
+    >
+      <Typography sx={{ width: '33%', flexShrink: 0 }}>{categoryParentId3?.name}</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <TableContainer component={Paper}>
+        <Table sx={{ width: "100%" }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Услуга</TableCell>
+              <TableCell align="right">Цена</TableCell>
+              <TableCell align="right">Время(минут)</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {
             servicesKid && servicesKid.map(kid =>
               <KidServicesCard kid={kid} categoryParentId3={categoryParentId3} key={kid.id} />
             )}
-        </Typography>
+         </TableBody>
+          </Table>
+        </TableContainer>
       </AccordionDetails>
     </Accordion>
   );

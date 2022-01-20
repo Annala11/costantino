@@ -9,13 +9,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate() {
-      
+
     }
   }
   Review.init({
     title: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     },
     text: {
       allowNull: false,
@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes) => {
     rating: {
       allowNull: false,
       type: DataTypes.INTEGER
+    },
+    top_review: {
+      allowNull: false,
+      type: DataTypes.BOOLEAN
     },
     branch_id: {
       allowNull: false,
