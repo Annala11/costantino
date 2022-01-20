@@ -28,7 +28,7 @@ function App() {
         <BrowserRouter>
           <ScrollToTop />
           <Navigation />
-          <div className="mainContainer">
+          <div className="mainContainer"> 
 
             <Switch>
               <Route path="/" exact component={Home} />

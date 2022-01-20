@@ -99,7 +99,7 @@ function Navigation() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1, marginLeft: '20px', fontSize: '25px' }}>
-            <Link to='/' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link>
+            <Link to='/' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > COSTANTINO </Link>
             <img className="navLogo" src="/logo.png"/>
           </Typography>
           <CallIcon></CallIcon>
