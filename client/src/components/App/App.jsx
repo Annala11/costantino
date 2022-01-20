@@ -20,6 +20,7 @@ import Footer from '../HomeViews/Footer/Footer';
 import SpecialistsList from '../PagesViews/PagesSpecialists/SpecialistsList';
 import NewOrder from '../NewOrdersViews/NewOrder/NewOrder';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
+import PagesContact from '../PagesViews/PagesContact/PagesContact';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
               <Route path="/reviews" component={ReviewPage} />
               <Route path="/neworder" component={NewOrder} />
               <Route path="/spec" exact component={SpecialistsList} />
+              <Route path="/contacts" exact component={PagesContact} />
             </Switch>
           </div>
           <Footer />
