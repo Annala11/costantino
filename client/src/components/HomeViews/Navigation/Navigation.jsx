@@ -87,7 +87,7 @@ function Navigation() {
       <AppBar className='navBlockMenu' position="fixed" open={open}
         style={{
           color: '#FFE4B5',
-          textShadow: `1px 1px 2px pink`
+          textShadow: `1px 1px 2px pink`,
         }}>
         <Toolbar className='navBlockMenu' >
           <IconButton
@@ -99,11 +99,11 @@ function Navigation() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1, marginLeft: '20px', fontSize: '25px' }}>
-            <Link to='/' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > COSTANTINO </Link>
+            <Link to='/' style={{ flexGrow: 1, fontSize: '32px', textDecoration: 'none', color: '#FFE4B5' }} > COSTANTINO </Link>
             <img className="navLogo" src="/logo.png"/>
           </Typography>
           <CallIcon></CallIcon>
-          <Button color="inherit" size='small' style={{ fontSize: '15px' }}>
+          <Button color="inherit" size='small' style={{ fontSize: '20px' }}>
             8-812-777-77-77
           </Button>
         </Toolbar>
