@@ -42,7 +42,7 @@ module.exports = {
     },{
       name: 'Нарыжная Татьяна',
       description: 'Парикмахер',
-      photo: '/specialists/spec6.jpeg',
+      photo: '/specialists/spec6.jpg',
       branch_id: 1,
       createdAt: new Date(),
       updatedAt: new Date(),

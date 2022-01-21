@@ -151,6 +151,7 @@ function Navigation() {
           </List> :
           <List className='navBlockMenu'>
             {[
+              { text: 'ГЛАВНАЯ', link: '/' },
               { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
               { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
               { text: 'АКЦИИ', link: '/stockprice' },

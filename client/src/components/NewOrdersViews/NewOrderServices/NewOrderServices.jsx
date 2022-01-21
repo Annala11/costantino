@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -14,22 +13,25 @@ function NewOrderServices({ serviceid }) {
   return (
     <div>
       {
-        serviceid &&
+        serviceid ?
         <div>
-          <div>Выбранная услуга</div>
+          <h3>Выбранная услуга</h3>
           <NewOrderService service={service} />
         </div>
+        :
+        <div>
+          Начните запись с выбора услуги
+          <br/><br/>
+        </div>
       }
-      <Button >
-        <Link to="/servicesandprices">
+        <Link to="/servicesandprices" className="mainButton">
           {
             service ?
-              'Выбрать другую услугу'
+              'ВЫБРАТЬ ДРУГУЮ УСЛУГУ'
               :
-              'Выбрать услугу'
+              'ВЫБРАТЬ УСЛУГУ'
           }
         </Link>
-      </Button>
     </div>
   );
 }

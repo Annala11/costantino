@@ -8,10 +8,9 @@ const getOrders = async (req, res) => {
   const { user_id } = req.body
   try {
 
-    const whereBlock = { '$Order.status$': 'finished' };
+    const whereBlock = { '$Order.status$': ['finished','created'] };
 
     if (user_id) {
-
       whereBlock['$Order.user_id$'] = user_id;
     }
     const orders = await Order.findAll({

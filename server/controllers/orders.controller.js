@@ -5,7 +5,7 @@ const getOrdersForCalendar = async (req, res) => {
   //получает записи, для отрисовки на клиенте (свободных и занятных интервалов для указанного спец-та на указанную дату)
   //специалисты и ордеры
   const { specid, date } = req.body;
-
+  //const orderdate = (new Date(date));
   try {
     const orders = await Order.findAll({
       where: {
@@ -13,7 +13,7 @@ const getOrdersForCalendar = async (req, res) => {
           [Op.in]:['created','finished']
         },
         specialist_id: specid,
-        //date:date ???
+        date: date
       },
       attributes: {
         exclude: ['createdAt', 'updatedAt']
@@ -23,8 +23,18 @@ const getOrdersForCalendar = async (req, res) => {
         attributes: ['interval']
       }
     });
-
-    res.status(200).json({ orders });
+    const preparedOrders = orders.map((order)=>{
+      const object = {};
+      for (const [key, value] of Object.entries(order.dataValues)) {
+        if(key !== "Services"){
+          object[key] = value;
+        } else {
+          object.interval = value[0]?.interval;
+        }
+      }
+      return object;
+    });
+    res.status(200).json({ orders:preparedOrders });
   } catch (error) {
     res.status(404).json({ error: 'error' });
     console.log(error);
@@ -43,8 +53,7 @@ const orderMe = async (req, res) => {
       status: 'created',
       startinterval:interval,
       date,
-    });//, { plain: true }
-    console.log(order,'order!!');
+    });
     if(order){
       const orderservice = await OrderService.create({
         order_id: order.id,

@@ -34,9 +34,13 @@ function SpecialistsList({ specs }) {
     }
   };
 
-  const handleSpec = () => {
+  function handleSpec(event) {
+    event.preventDefault();
     const queryParams = new URLSearchParams(window.location.search);
     const serviceid = queryParams.get("serviceid");
+    if(!serviceid || !specialistId){
+      return;
+    }
     let url = serviceid ?
       `/neworder?serviceid=${serviceid}&specid=${specialistId}` :
       `/neworder?specid=${specialistId}`;
@@ -78,9 +82,9 @@ function SpecialistsList({ specs }) {
         }
       </List>
 
-      <button className='specialistButton' onClick={handleSpec}>
-        Выбрать  специалиста
-      </button>
+      <a href="#" className='specialistButton mainButton' onClick={handleSpec}>
+        ВЫБРАТЬ СПЕЦИАЛИСТА
+      </a>
     </div>
   )
 }

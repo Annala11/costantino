@@ -12,11 +12,11 @@ function NewOrder({ serv_id, spec_id }) {
   const queryParams = new URLSearchParams(window.location.search);
   const serviceid = serv_id ? serv_id : queryParams.get("serviceid");
   const specid = spec_id ? spec_id : queryParams.get("specid");
+  const finished = queryParams.get("finished");
 
   const [value, onChange] = useState(new Date());
   const dispatch = useDispatch();
 
-  const calendarorders = useSelector(state => state.orders.calendarorders);
   const currentUser = useSelector(state => state.users.user);
 
   useEffect(() => {
@@ -37,12 +37,10 @@ function NewOrder({ serv_id, spec_id }) {
         if (data.error) {
           console.log(data.error);
         } else {
-          //setActiveOrders(data.orders);
           dispatch(setCalendarOrdersAC(data.orders));
         }
       })
   }, [value]);
-  console.log(currentUser.id);
   return (
     <div>
       {currentUser.id ?
@@ -56,33 +54,61 @@ function NewOrder({ serv_id, spec_id }) {
             <div>
               <NewOrderServices serviceid={serviceid} specid={specid} />
             </div>
-            <div>
-              <NewOrderSpecialists specid={specid} serviceid={serviceid} />
-            </div>
+
+            {serviceid ?
+              <div>
+                <NewOrderSpecialists specid={specid} serviceid={serviceid} />
+              </div>
+              :
+              <div style={{ backgroundColor: "#FFE4B5" }}>
+                <img className="startOrderImg" src="/common/startorder.png" />
+              </div>
+            }
           </div>
           {
             specid && serviceid &&
-            <div className="orderCalendarContainer">
-              <Calendar
-                minDate={new Date()}
-                onChange={onChange}
-                value={value}
-              />
-              <div className="calendarOrdersContainer">
-                {specid && serviceid && calendarorders &&
-                  <div>
-                    <CalendarOrders calendarorders={calendarorders} date={value} serviceid={serviceid} specid={specid} />
-                  </div>
-                }
+            <>
+              <div className="orderCalendarContainer">
+                <Calendar
+                  minDate={new Date()}
+                  onChange={onChange}
+                  value={value}
+                />
+                <div className="calendarOrdersContainer">
+                  {specid && serviceid && finished !== '1' ?
+                    <>
+                      <div>
+                        <CalendarOrders date={value} serviceid={serviceid} specid={specid} />
+                      </div>
+
+                      <div className="orderLegenda whiteBackGround">
+                        <div>
+                          <span className="orderLegendaSquare calendarInterval"></span> - Время свободно для записи
+                        </div>
+                        <div>
+                          <span className="orderLegendaSquare calendarInterval inactiveInterval"></span> - Время недоступно
+                        </div>
+                      </div>
+                    </>
+                    :
+                    <div className="orderCompleteBox">
+                      Запись успешно завершена!<br/><br/>
+                      Пройдите на <Link to="/">Главную страницу</Link> или <Link to="/neworder">выберите новую услугу</Link>.
+                      </div>
+                  }
+                </div>
               </div>
-            </div>
+            </>
           }
         </div>
         :
         <div className="authorizeFirst whiteBackGround">
           <Link to='/login'>
-            Авторизуйтесь сначала!
+            Авторизуйтесь, чтобы осуществить запись на услугу
           </Link>
+          <br/>
+          <br/>
+          <img className="startOrderImg" src="/common/startorder.png" />
         </div>
       }
     </div>

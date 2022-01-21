@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { initOrdersAC } from '../../../redux/ActionCreators/ordersAC';
 // import { initSpecialistsAC } from '../../../redux/ActionCreators/specialistsAC';
 import MyOrdersCars from './MyOrdersCars';
@@ -35,7 +36,12 @@ function MyOrders() {
   }, [])
 
   return (
-    <div  style={{ marginTop: "50px", borderRadius: '10px'}} >
+    <div style={{ marginTop: "50px", borderRadius: '10px' }} >
+      {!orderUserId.length &&
+        <div>У вас еще нет записей на услуги нашей парикмахерской!<br/>
+        <Link to="/neworder">Запишитесь</Link> на свою первую стрижку и прочувствуйте лучший сервис в этом городе!
+        </div> 
+      }
       {orderUserId && orderUserId.map(order => <MyOrdersCars key={order.id} order={order} />)}
     </div>
   );

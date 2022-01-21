@@ -3,7 +3,8 @@
   max-width: 800px;
   min-width: 600px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap:5px;
   flex-wrap: wrap;
 }
 .calendarInterval{
@@ -11,9 +12,9 @@
   background-color:coral;
 }
 .calendarInterval.chosenInterval{
-  background-color: darkkhaki;
+  background-color: darkkhaki !important;
 }
-.calendarInterval:not(.chosenInterval):hover{
+.calendarInterval:not(.chosenInterval):not(.inactiveInterval):hover{
   background-color: darkgoldenrod;
   cursor: pointer;
 }
@@ -22,4 +23,8 @@
   display: flex;
   justify-content: center;
   padding: 20px;
+}
+
+.calendarInterval.inactiveInterval{
+  background-color: grey;
 }

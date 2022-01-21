@@ -4,8 +4,6 @@ const { User } = require('../db/models');
 const registerUser = async (req, res) => {
   try {
     const { phone, password, name } = req.body;
-    console.log({ phone, password, name });
-
     if(!password || password.length < 6){
       return res.status(401).json({
         user: false,
