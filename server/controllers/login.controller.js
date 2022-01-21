@@ -21,15 +21,15 @@ const login = async (req, res) => {
       })
     }
 
-    // const isValidPassword = await bcrypt.compare(password, userByPhone.password);
+    const isValidPassword = await bcrypt.compare(password, userByPhone.password);
     
-    // if (!isValidPassword) {
-    //   return res.status(401)
-    //     .json({
-    //       user: false,
-    //       error: 'Пароль не верный',
-    //     })
-    // }
+    if (!isValidPassword) {
+      return res.status(401)
+        .json({
+          user: false,
+          error: 'Пароль не верный',
+        })
+    }
 
     req.session.user = {
       id: userByPhone.id,
