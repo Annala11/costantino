@@ -46,7 +46,7 @@ function NewOrder({ serv_id, spec_id }) {
       {currentUser.id ?
         <div>
           <div>
-            <h1>
+            <h1 style={{color:"#FFE4B5"}}>
               Выберите услугу, мастера и желаемое время.
             </h1>
           </div>
