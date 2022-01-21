@@ -1,6 +1,6 @@
   @media screen and (min-width: 900px) { 
     .servicesAndPrices {
-      width: 60%;
+      width: 60% !important;
     }
   }
 

@@ -32,11 +32,11 @@ function ServicesAndPricesList() {
   const categoriesParentId3 = categories.filter(category => category.parent_id === 3);
 
   return (
-    <Container className="servicesAndPrices" sx={{ width: "60%" }}>
+    <Container className="servicesAndPrices">
       {(!catid || +catid === 1) &&
         <Card sx={{ marginTop: "50px", width: "100%" }}>
           <CardActionArea>
-            <CardContent>
+            <CardContent style={{width:"100%"}}>
               <Typography gutterBottom variant="h5" component="div">
                 {categoriesParent[0]?.name}
               </Typography>
@@ -51,7 +51,7 @@ function ServicesAndPricesList() {
       {(!catid || +catid === 2) &&
         <Card sx={{ marginTop: "10px", width: "100%" }}>
           <CardActionArea>
-            <CardContent>
+            <CardContent style={{width:"100%"}}>
               <Typography gutterBottom variant="h5" component="div">
                 {categoriesParent[1]?.name}
               </Typography>
@@ -66,7 +66,7 @@ function ServicesAndPricesList() {
       {(!catid || +catid === 3) &&
         <Card sx={{ marginTop: "10px", width: "100%" }}>
           <CardActionArea>
-            <CardContent>
+            <CardContent style={{width:"100%"}}>
               <Typography gutterBottom variant="h5" component="div">
                 {categoriesParent[2]?.name}
               </Typography>
