@@ -21,15 +21,17 @@ import SpecialistsList from '../PagesViews/PagesSpecialists/SpecialistsList';
 import NewOrder from '../NewOrdersViews/NewOrder/NewOrder';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import PagesContact from '../PagesViews/PagesContact/PagesContact';
+import ReactNotification from 'react-notifications-component';
 
 function App() {
   return (
     <Provider store={store}>
       <LoginAndInitWrapper>
+        <ReactNotification />
         <BrowserRouter>
           <ScrollToTop />
           <Navigation />
-          <div className="mainContainer"> 
+          <div className="mainContainer">
 
             <Switch>
               <Route path="/" exact component={Home} />

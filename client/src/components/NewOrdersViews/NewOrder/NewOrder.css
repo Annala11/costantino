@@ -1,16 +1,20 @@
 .orderTopContainer{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.orderTopContainer h3{
+  font-weight: 400;
 }
 .orderTopContainer > div{
   background-color: white;
   width:45%;
   text-align:center;
   padding: 20px;
+  margin-bottom: 50px;
 }
 
 .orderCalendarContainer{
-  margin: 50px 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -18,9 +22,46 @@
 
 .calendarOrdersContainer{
   background-color: white;
+  padding-top:20px;
 }
 
 .authorizeFirst{
   padding: 40px;
+}
+
+.notification{
+  padding: 0;
+}
+
+.orderLegenda{
+  background-color: white;
+  padding:20px;
+  display: flex;
+  justify-content: space-around;
   
+}
+.orderLegenda > div{
+  position: relative;
+}
+.orderLegendaSquare.calendarInterval{
+  display:inline-block;
+  width:40px;
+  height:40px;
+  position: absolute;
+  top: -10px;
+  left: -50px;
+  padding: 20px;
+}
+
+.startOrderImg{
+  width:100%;
+}
+
+.react-calendar{
+  max-height: 350px
+}
+
+.orderCompleteBox{
+  padding:120px;
+  text-align: center;
 }

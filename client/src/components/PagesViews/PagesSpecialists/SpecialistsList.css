@@ -19,6 +19,10 @@
   color: #FFE4B5;
 
 }
+.allSpecialistsBlock{
+  text-align: -webkit-center;
+}
+
 .allSpecialistsBlock .specialistBlock{
   margin-top: 50px;
 }

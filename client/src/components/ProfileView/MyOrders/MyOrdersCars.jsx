@@ -16,14 +16,13 @@ function MyOrdersCars({ order }) {
   };
   // разные специалисты для одного ордера
   const newSpec = specialists.filter(spec => spec.id === order.specialist_id);
-  console.log(order.date, 'orderservices');
 
   const dateShortHelper = (date) => {
     console.log(dayjs(date).locale("ru").format("YYYY.MM.DD"),'dayjs');
     if (date === undefined || date === null) {
       return "";
     }
-    return `Дата оказания услуги: ${dayjs(date).locale("ru").format("YYYY.MM.DD")} в: ${dayjs(date).locale("ru").format("HH:mm")}`
+    return `Дата оказания услуги: ${dayjs(date).locale("ru").format("YYYY.MM.DD")}`
   };
 
   return (
@@ -37,7 +36,7 @@ function MyOrdersCars({ order }) {
         id="panel1bh-header"
       >
         <Typography style={{ color: 'black', fontWeight: 'bold', fontSize: '20px', marginLeft: "30px", minHeight: "40px", flexShrink: 0 }}>
-          {dateShortHelper(order.date)}
+          {dateShortHelper(order.date) + ' в ' + Math.floor(order.startinterval / 2)}:{(order.startinterval % 2) === 0 ? '00' : '30'} {order.status==="finished" && <i>завершен</i>}
         </Typography>
       </AccordionSummary>
       <AccordionDetails >
@@ -57,7 +56,7 @@ function MyOrdersCars({ order }) {
                 >
 
                 </Typography>
-                {order.Services[0]?.name}
+                {order.Services[0]?.name}. Длительность: {order.Services[0].interval * 30} минут
               </React.Fragment>
             }
           />

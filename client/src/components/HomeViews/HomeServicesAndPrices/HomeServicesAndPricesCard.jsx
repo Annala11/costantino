@@ -9,7 +9,6 @@ function HomeServicesAndPricesCard({ categoryParent }) {
 
   const relocationParentCategory = () => {
     history.push(`/servicesandprices/${categoryParent.id}`);
-    console.log(categoryParent.id);
   }
 
   return (
