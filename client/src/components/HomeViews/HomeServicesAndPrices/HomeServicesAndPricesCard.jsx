@@ -35,7 +35,7 @@ function HomeServicesAndPricesCard({ categoryParent }) {
         <img onClick={relocationParentCategory} className='homeServicesImg' src="/categoryFoto/childCategory.jpg" alt=""></img>
       }
       {categoryParent.id === 3 &&
-        <p style={{ color: '#5F9EA0', margin: '15px', textShadow: '2px 2px 5px #4682B4' }} >{categoryParent.discription ? categoryParent.discription : 'ПОВСЕКИ И ПОДГОТОВКА ВАШЕГО РЕБЕНКА К ДЕТСКИМ, НО ВСЕ ЖЕ - СЕРЬЕЗНЫМ МЕРОПРИЯТИЯМ, МЫ С РАДОСТЬЮ И ВЕСЕЛЬЕМ ПОМОЖЕМ ВАМ'}</p>
+        <p style={{ color: '#5F9EA0', margin: '15px', textShadow: '2px 2px 5px #4682B4' }} >{categoryParent.discription ? categoryParent.discription : 'ПОВСЕДНЕВНАЯ СТРИЖКА И ПОДГОТОВКА ВАШЕГО РЕБЕНКА К ДЕТСКИМ, НО ВСЕ ЖЕ - СЕРЬЕЗНЫМ МЕРОПРИЯТИЯМ, МЫ С РАДОСТЬЮ И ВЕСЕЛЬЕМ ПОМОЖЕМ ВАМ'}</p>
       }
     </div>
   );
