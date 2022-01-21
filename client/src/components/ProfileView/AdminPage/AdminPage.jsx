@@ -8,8 +8,6 @@ function AdminPage() {
   const { allOrdersForAdmin } = useSelector(state => state.orders);
   const dispatch = useDispatch();
 
-  console.log(allOrdersForAdmin);
-
   useEffect(() => {
     fetch('/ordersview/allorders', {
       method: 'GET',

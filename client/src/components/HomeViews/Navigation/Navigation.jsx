@@ -69,7 +69,7 @@ function Navigation() {
 
   const user = useSelector(state => state.users.user);
   const userIsAuth = !!user.id;
-  
+
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -99,12 +99,15 @@ function Navigation() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1, marginLeft: '20px', fontSize: '25px' }}>
-            <Link to='/' style={{ flexGrow: 1, fontSize: '32px', textDecoration: 'none', color: '#FFE4B5' }} > COSTANTINO </Link>
-            <img className="navLogo" src="/logo.png"/>
+            <Link to='/' style={{ flexGrow: 1, fontSize: '25px', textDecoration: 'none', color: '#FFE4B5' }} > COSTANTINO </Link>
+            <img className="navLogo" src="/logo.png" />
           </Typography>
-          <CallIcon></CallIcon>
-          <Button color="inherit" size='small' style={{ fontSize: '20px' }}>
-            8-812-777-77-77
+          <a href="tel:+7-812-777-77-77" >
+            <CallIcon>
+            </CallIcon>
+          </a>
+          <Button color="inherit" size='small' style={{ fontSize: '15px' }}>
+            7-812-777-77-77
           </Button>
         </Toolbar>
       </AppBar>
@@ -114,7 +117,7 @@ function Navigation() {
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
-            backgroundColor: "#000" ,
+            backgroundColor: "#000",
             boxSizing: 'border-box',
           },
         }}
@@ -125,7 +128,7 @@ function Navigation() {
           <Typography variant="h6" noWrap component="div" >
             {/* <Link to='/' style={{ flexGrow: 1, textDecoration: 'none', color: '#FFE4B5' }} > Costantino </Link> */}
           </Typography>
-          <IconButton style={{color:'#FFE4B5'}}onClick={handleDrawerClose}>
+          <IconButton style={{ color: '#FFE4B5' }} onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -137,7 +140,7 @@ function Navigation() {
               { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
               { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
               { text: 'АКЦИИ', link: '/stockprice' },
-              { text: 'КОНТАКТЫ', link: '/contacts' },
+              { text: 'О НАС', link: '/contacts' },
               { text: 'ПРОФИЛЬ', link: '/myprofile' },
               { text: 'ВЫЙТИ', link: '/logout' }
             ].map((el) => (
@@ -148,10 +151,11 @@ function Navigation() {
           </List> :
           <List className='navBlockMenu'>
             {[
+              { text: 'ГЛАВНАЯ', link: '/' },
               { text: 'ЗАПИСАТЬСЯ ОН-ЛАЙН', link: '/neworder' },
               { text: 'УСЛУГИ И ЦЕНЫ', link: '/servicesandprices' },
               { text: 'АКЦИИ', link: '/stockprice' },
-              { text: 'КОНТАКТЫ', link: '/contacts' },
+              { text: 'О НАС', link: '/contacts' },
               { text: 'ВОЙТИ', link: '/login' }
             ].map((el) => (
               <ListItem button key={el.text}>

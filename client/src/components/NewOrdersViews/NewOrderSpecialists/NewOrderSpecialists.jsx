@@ -3,11 +3,13 @@ import { useSelector } from 'react-redux';
 import SpecialistsList from '../../PagesViews/PagesSpecialists/SpecialistsList';
 import NewOrderSpec from '../NewOrderSpec/NewOrderSpec';
 import { getServiceRootCategoryId } from '../../../helpers/main';
+import { useHistory } from 'react-router-dom';
 
 function NewOrderSpecialists({ specid, serviceid }) {
   let categoryid;
   let spec;
   let specsToChoose;
+  const history = useHistory();
 
   if(serviceid){
     categoryid = getServiceRootCategoryId(serviceid);
@@ -22,13 +24,20 @@ function NewOrderSpecialists({ specid, serviceid }) {
       return el.catids?.includes(categoryid);
     });
   }
+
+  function chooseAnotherSpec(event){
+    event.preventDefault();
+    history.push(`/neworder?serviceid=${serviceid}`);
+  }
   
   return (
     <div>
       {specid ?
         <div>
-          <div>Ваш мастер:</div>
+          <h3>Ваш мастер:</h3>
           <NewOrderSpec spec={spec} />
+          <br/><br/>
+          <a href="#" className="mainButton" onClick={chooseAnotherSpec}>Выбрать другого мастера</a>
         </div>
         :
         <div>

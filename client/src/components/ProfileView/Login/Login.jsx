@@ -74,7 +74,7 @@ function Login() {
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
+        <CssBaseline clhassName='jkhjkhkj' />
         <Grid
           item
           xs={false}
@@ -89,7 +89,8 @@ function Login() {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square
+          style={{ backgroundColor: '#E0E0E0' }}>
           <Box
             sx={{
               my: 8,
@@ -117,7 +118,7 @@ function Login() {
                 autoComplete="Phone"
                 autoFocus
               />
-              <TextField
+              <TextField sx={{ marginTop: "20px" }}
                 margin="normal"
                 required
                 fullWidth
@@ -137,11 +138,12 @@ function Login() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                style={{ marginTop: '20px' }}
               >
                 Войти
               </Button>
               <Grid container>
-                <Grid item>
+                <Grid item sx={{ marginTop: "20px" }}>
                   <Link to="/registration" variant="body2">
                     {"Нет аккаунта? Зарегистрируйтесь."}
                   </Link>

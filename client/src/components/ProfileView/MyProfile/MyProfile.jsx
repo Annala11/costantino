@@ -1,15 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import MyOrders from '../MyOrders/MyOrders';
-// import { useHistory } from 'react-router';
 import './MyProfile.css'
 
 function MyProfile() {
 
-  // const history = useHistory();
 
   const user = useSelector(state => state.users.user);
-  console.log(user, 'iser');
   //TODO
   return (
     <div className="whiteBackGround myProfileContainer">

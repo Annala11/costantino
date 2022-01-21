@@ -14,23 +14,10 @@ import { getServiceRootCategoryId } from '../../../helpers/main';
 
 
 function ServicesAndPricesList() {
-  //todo сделать парамс в случае, если компонента будет строится на других страницах(ордер)
   const { catid } = useParams("catid");
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   fetch('/categories')
-  //     .then(response => response.json())
-  //     .then(data => dispatch(initCategoriesAC(data.categories)))
-  // }, [])
-  // useEffect(() => {
-  //   fetch('/services')
-  //     .then(response => response.json())
-  //     .then(data => dispatch(initServicesAC(data.categories)))
-  // }, [])
+
   const services = useSelector(state => state.services.services);
   const categories = useSelector(state => state.categories.categories);
-
-  //const servicesToDraw = [];
 
   const servicesWomen = services?.filter(service => getServiceRootCategoryId(service.id) === 1);
   const servicesMen = services?.filter(service => getServiceRootCategoryId(service.id) === 2);

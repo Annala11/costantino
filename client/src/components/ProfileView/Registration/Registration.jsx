@@ -86,7 +86,9 @@ function Registration() {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6}
+          style={{ backgroundColor: '#E0E0E0' }}
+        >
           <Box
             sx={{
               my: 8,
@@ -139,11 +141,12 @@ function Registration() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                style={{ marginTop: '20px' }}
               >
                 Зарегистрироваться
               </Button>
               <Grid container>
-                <Grid item xs>
+                <Grid item xs sx={{ marginTop: '20px' }}>
                   <Link to="/login" variant="body2">
                     Уже зарегистрирован
                   </Link>
