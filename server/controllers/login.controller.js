@@ -15,7 +15,6 @@ const login = async (req, res) => {
     });
     
     if (!userByPhone) {
-      console.log(1111);
       return res.status(401).json({
         user: false,
         error: 'Пользователя с таким телефоном не существует',

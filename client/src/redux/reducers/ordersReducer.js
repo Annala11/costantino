@@ -3,10 +3,13 @@ import { ordersAT } from "../ActionTypes/ordersAT";
 const initialState = {
   orders: [],
   allOrdersForAdmin: [],
-  calendarorders : []
+  calendarorders : [],
+  calendarordersintervals: [],
 };
 
 export const ordersReducer = (state = initialState, action) => {
+  // const orders= action.payload;//SET_CALENDAR_ORDERS
+  // const calendarintervals = [];
 
   switch (action.type) {
     case ordersAT.INIT_ORDERS:
@@ -38,9 +41,16 @@ export const ordersReducer = (state = initialState, action) => {
         })
       }
     case ordersAT.SET_CALENDAR_ORDERS:
+      // console.log(orders,'SET_CALENDAR_ORDERS');
+      // orders.forEach((order) => {
+      //   console.log(order,'order.Services[0]');
+      //   calendarintervals.push({ [order.startinterval]: order.Services[0]?.interval });
+      // });
+      // console.log(calendarintervals,'!!!SET_CALENDAR_ORDERS');
       return {
         ...state,
-        calendarorders: action.payload
+        calendarorders: action.payload,
+        // calendarordersintervals: calendarintervals,
       }
 
     default:

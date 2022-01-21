@@ -42,7 +42,7 @@ export default function MyCarousel() {
     fontWeight: 'bold',
   }
   return (
-    <div style={{position:'relative'}} >
+    <div className="caruselContainer" style={{position:'relative'}} >
       <Carousel 
         data={data}
         time={2500}

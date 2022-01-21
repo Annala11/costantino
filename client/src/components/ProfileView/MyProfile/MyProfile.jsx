@@ -1,17 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { useHistory } from 'react-router';
+import MyOrders from '../MyOrders/MyOrders';
+import './MyProfile.css'
 
 function MyProfile() {
 
-  // const history = useHistory();
 
-  const user = useSelector(state => state.admin);
+  const user = useSelector(state => state.users.user);
   //TODO
   return (
+    <div className="whiteBackGround myProfileContainer">
     <div>
-      <div>Имя: {user.name}</div>
-      <div>Телефон: {user.phone}</div>
+      <h1 className='ProfileName'>Имя: {user.name}</h1>
+      <h1>Телефон: {user.phone}</h1>
+    </div>
+    <MyOrders/>
     </div>
   );
 }

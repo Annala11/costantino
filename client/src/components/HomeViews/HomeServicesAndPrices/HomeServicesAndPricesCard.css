@@ -1,31 +1,36 @@
-
 .homeServicesImg {
   width: 60%;
-  height: 100%;
+  min-height: 300px;
   object-fit:cover;
-  
+  max-height: 280px;
   -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
-  
   transform-origin:center;
   transform:perspective(800px) rotateY(25deg);
   transition:0.5s;
 }
-.container {
-  max-width:600px;
+.homeService {
+  max-width:400px;
   max-height:350px;
-  
-  
-  
   display:flex;
-  justify-content:center;
+  justify-content:flex-start;
+  flex-direction: column;
   align-items:center;
   gap:20px;
-  
 }
-.container:hover img {
+.homeService:hover img {
   opacity:0.3;
+  cursor: pointer;
 }
-.container img:hover {
+.homeService img:hover {
   transform:perspective(800px)       rotateY(0deg);
   opacity:1;
+}
+
+.homeService h3 {
+  cursor: pointer;
+}
+
+.homeService p {
+  text-align: center;
+  width: 80%;
 }

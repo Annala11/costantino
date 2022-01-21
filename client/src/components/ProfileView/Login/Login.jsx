@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import './Login.css'
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
 import { Link } from 'react-router-dom';
@@ -19,7 +20,7 @@ function Login() {
 
   const dispatch = useDispatch();
   let history = useHistory();
-  const error = useSelector(state=>state.users.error);
+  const error = useSelector(state => state.users.error);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,9 +47,26 @@ function Login() {
         }
       })
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      dispatch(userErrorAC(''))
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [error])
+
+  useEffect(() => {
+    return () => {
+      dispatch(userErrorAC(''))
+    }
+  }, [])
+
   return (
       <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
+        <CssBaseline clhassName='jkhjkhkj' />
         <Grid
           item
           xs={false}
@@ -63,7 +81,8 @@ function Login() {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square
+          style={{ backgroundColor: '#E0E0E0' }}>
           <Box
             sx={{
               my: 8,
@@ -91,7 +110,7 @@ function Login() {
                 autoComplete="Phone"
                 autoFocus
               />
-              <TextField
+              <TextField sx={{ marginTop: "20px" }}
                 margin="normal"
                 required
                 fullWidth
@@ -111,11 +130,12 @@ function Login() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                style={{ marginTop: '20px' }}
               >
                 Войти
               </Button>
               <Grid container>
-                <Grid item>
+                <Grid item sx={{ marginTop: "20px" }}>
                   <Link to="/registration" variant="body2">
                     {"Нет аккаунта? Зарегистрируйтесь."}
                   </Link>
@@ -123,7 +143,9 @@ function Login() {
               </Grid>
               {error &&
                 <Grid className="authorizeError">
-                  {error}
+                  {
+                    error
+                  }
                 </Grid>
               }
             </Box>

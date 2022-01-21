@@ -42,7 +42,7 @@ function Footer() {
               </Link>
             </Box>
             <Box>
-              <Link to="/profile" color="inherit">
+              <Link to="/myprofile" color="inherit">
                 Профиль
               </Link>
             </Box>
