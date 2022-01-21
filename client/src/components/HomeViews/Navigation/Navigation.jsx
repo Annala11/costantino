@@ -87,7 +87,7 @@ function Navigation() {
       <AppBar className='navBlockMenu' position="fixed" open={open}
         style={{
           color: '#FFE4B5',
-          textShadow: `1px 1px 2px pink`
+          textShadow: `1px 1px 2px pink`,
         }}>
         <Toolbar className='navBlockMenu' >
           <IconButton
