@@ -15,7 +15,7 @@ function PagesStockPrice() {
 
     for (const slide of slides) {
       slide.addEventListener('click', () => {
-        clearActiveClasses()
+        clearActiveClasses();
 
         slide.classList.add('active')
       })
